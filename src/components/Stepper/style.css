@@ -20,7 +20,7 @@
 
 .stepper_input{
   width: 30px !important;
-  height: 30px !important;
+  /* height: 30px !important; */
   border: none;
   /* margin-inline: 20px; */
   border-inline: 1px solid rgb(8, 0, 0);

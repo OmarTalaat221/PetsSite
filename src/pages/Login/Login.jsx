@@ -129,7 +129,7 @@ const ResgistrationPage = () => {
             </div>
 
             <p className='my-0'>
-              No tienes cuenta? <a className='c_pointer' onClick={()=> navigate("/registration")}>Regístrate ahora</a>
+            ¿No tienes cuenta? <a className='c_pointer' onClick={()=> navigate("/registration")}>Regístrate ahora</a>
             </p>
           </div>
         </form>

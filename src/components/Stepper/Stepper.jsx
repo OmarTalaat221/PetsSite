@@ -32,17 +32,18 @@ const Stepper = ({ value, onChange }) => {
   }
 
   return (
-    <div className='stepper_container' style={{ display: 'flex', alignItems: 'center' }}>
-      <button className='stepper_button' onClick={handleDecrement} disabled={value <= 0}>-</button>
+    <div className='stepper_container' style={{ display: 'flex', }}>
+      <button className='stepper_button' style={{background:"transparent", color:"white"}} onClick={handleDecrement} disabled={value <= 0}>-</button>
       <input
         className='stepper_input'
         type="number"
-        value={value}
+        style={{background:"transparent", color:"white", width: '50px', textAlign: 'center' }}
+        value={value} 
         onChange={handleChange}
         onKeyDown={handlekeydown}
-        style={{ width: '50px', textAlign: 'center' }}
+        // style={{ }}
       />
-      <button className='stepper_button' onClick={handleIncrement}>+</button>
+      <button className='stepper_button' style={{background:"transparent", color:"white"}} onClick={handleIncrement}>+</button>
     </div>
   );
 };

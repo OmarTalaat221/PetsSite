@@ -80,7 +80,8 @@ const Cart = ({openCart, setOpenCart}) => {
                     />
                     <div
                       onClick={() => handleRemoveFromCart(prod)}
-                      className='bg-light py-2 cursor-pointer'
+                      className=' py-2 cursor-pointer'
+                      style={{background:"transparent", color:"white"}}
                     >
                       {TrashIcon2}
                     </div>

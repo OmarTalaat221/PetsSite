@@ -144,3 +144,8 @@
 /* Extra extra large devices (larger desktops, less than 1600px) */
 @media (max-width: 1599.98px) {
 }
+
+
+button.stepper_button, .stepper_input {
+  border: .1px solid !important;
+}
