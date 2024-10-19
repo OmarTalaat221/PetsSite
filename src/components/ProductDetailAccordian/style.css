@@ -1,0 +1,21 @@
+.product_accordion-item {
+    display: flex;
+    flex-direction: column;
+    margin: 17px 0px;
+}
+
+.product_accordion-item .product_accordion-title h3 {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    text-decoration: underline;
+}
+
+.product_accordion-content p {
+    margin: 10px 0px;
+}
+
+@media (max-width:480px) {
+    .product_accordion-item {
+        text-align: left;
+    }
+}

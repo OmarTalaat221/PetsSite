@@ -1,0 +1,239 @@
+.prev_container {
+  /* background-image: url("../../../assets/images/RUMP-perros-y-gatos-2.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left !important;
+  width: 100%;
+  overflow: hidden;
+  height: calc(100vh);
+  /* margin-top: - 124.19px; */
+  /* transform: translateY(-124.19px); */
+  position: relative;
+  margin-top: -148.19px;
+  scroll-behavior: smooth;
+}
+
+/* .prev_container .layout{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1e1e1eba;
+  scroll-behavior: smooth;
+
+} */
+
+
+.prev_container .image {
+  width: 350px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.prev_container .image img {
+  user-select: none;
+  -webkit-user-drag: none;
+  width: 100%;
+}
+
+.prev_container .info {
+  font-size: 20px;
+  width: 350px;
+  color: #222;
+  margin-bottom: 30px;
+  /* font-weight: bolder; */
+  text-align: center;
+}
+
+
+.oval_btn_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.prev_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  bottom: 60px;
+  /* width: 100%; */
+  /* bottom: 20px; */
+  right: 54px;
+  top: 150px;
+}
+
+
+.prev_content .info,
+.prev_content .bottom_txt {
+  font-weight: bold;
+}
+
+
+.oval_btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+.oval_button {
+  position: relative;
+  fill: rgb(248, 100, 8);
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.oval_button:hover {
+  transform: scale(1.1);
+}
+
+.bottom_txt {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #222;
+}
+
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+  .prev_container {
+    background-image: url("../../../assets/images/tallPreviews.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: hidden;
+    /* height: auto; */
+    /* margin-top: - 124.19px; */
+    /* transform: translateY(-124.19px); */
+    position: relative;
+    /* margin-top: -148.19px; */
+  }
+
+
+
+  .prev_container .image {
+    width: calc(100% - 20px);
+  }
+
+  .prev_container .info {
+    font-size: calc(10px + 1.3vw);
+    display: none;
+    padding-inline: 20px;
+    width: auto;
+    color: #222;
+  }
+
+
+
+  .prev_content {
+    width: 100%;
+    top: 140px;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+  .bottom_txt {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #222;
+  }
+
+  .prev_container {}
+
+
+
+
+
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .prev_container .layout {
+    display: block;
+  }
+
+  .prev_container .image {
+    width: 200px;
+  }
+
+  .prev_container .info {
+    font-size: 20px;
+    color: #FFF;
+  }
+
+
+  .prev_content {
+    width: 100%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+  .bottom_txt {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #fff;
+  }
+
+
+
+
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .prev_container .layout {
+    display: block;
+  }
+
+  .prev_container .image {
+    width: 200px;
+  }
+
+  .prev_container .info {
+    font-size: 20px;
+    color: #FFF;
+  }
+
+
+  .prev_content {
+    width: 100%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+  .bottom_txt {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #fff;
+  }
+
+
+
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {}

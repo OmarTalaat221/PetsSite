@@ -1,0 +1,277 @@
+.Footer2_container {
+  background-color: #ee701e;
+
+  padding-top:100px ;
+  padding-bottom:20px;
+  width: 100%;
+}
+
+.Footer2_container .Footer1_content {
+  background-color: #ee701e;
+  /* padding-block:20px ; */
+  width: 80%;
+  display: flex;
+  padding-inline: 20px;
+  margin-inline: auto;
+  gap: 50px;
+}
+
+.Footer2_container .Footer1_content .left_side .logo_image{
+  width: 160px;
+  margin-bottom: 20px;
+}
+.Footer2_container .Footer1_content .left_side .logo_image img{
+  width: 100%;
+}
+.Footer2_container .Footer1_content .left_side .icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Footer2_container .Footer1_content .left_side .icons div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+.Footer2_container .Footer1_content .left_side .email {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.Footer2_container .Footer1_content .left_side .email,
+.Footer2_container .Footer1_content .left_side .phone {
+  color: #fff;
+  font-size: 15px;
+}
+
+
+
+  .Footer1_content .mid_side{
+    display: flex;
+    gap: 40px;
+    margin-inline: 100px;
+
+    
+  }
+
+  .Footer1_content .mid_side .mid_side_title{
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .Footer1_content .mid_side a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #000;
+    display: block;
+    transition: .3s ease;
+  }
+  
+  .Footer1_content .mid_side a:hover{
+    font-weight: 600;
+  }
+
+  .right_side{
+
+  }
+
+    
+  .right_side .mapImage{
+    width: 100px;
+    margin-inline: auto;
+  }
+
+
+
+  .powerd_by{
+    width: 100%;
+    border-top: 2px solid #fff;
+    padding: 10px !important;
+    margin-top: 20px;
+  }
+  
+  .powerd_by .bigbang{
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    
+  }
+
+    .powerd_by .image{
+      width: 170px;
+    }
+    
+    .powerd_by .image  img{
+      text-align: center;
+      width: 100%;
+    }
+
+
+/* Optional: Add some additional styles for responsiveness */
+@media (max-width: 768px) {
+  .Footer2_container {
+    padding-block: 30px;
+  }
+
+  .Footer2_container .Footer1_content {
+    flex-direction: column;
+    padding-inline:20px ;
+    gap: 20px;
+  }
+
+  .Footer1_content .mid_side{
+    margin-inline:0;
+    margin-block: 30px;
+  }
+
+
+
+
+
+  
+  .Footer1_content .mid_side{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .Footer1_content .mid_side .mid_side_title{
+  font-size: 30px;
+}
+
+
+.Footer1_content .mid_side a{
+  font-size: 20px;
+
+}
+
+
+  .left_side{
+    text-align: center;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; 
+  }
+
+
+  
+  .left_side .icons{
+    text-align: center;
+  }
+
+
+  .Footer2_container .Footer1_content .left_side .email,
+  .Footer2_container .Footer1_content .left_side .phone {
+    color: #fff;
+    font-size: 16px;
+    text-align: center !important;
+  } 
+
+
+  .right_side{
+    text-align: center;
+    width: 100%;
+    margin-inline: auto;
+  }
+  
+  .right_side .mapImage{
+    width: 130px;
+    margin-inline: auto;
+  }
+
+  .Footer1_content .mid_side{
+    margin-inline: 50px;
+  }
+
+
+}
+
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  
+  .Footer2_container {
+    padding-block: 50px;
+    
+  }
+  
+
+  .Footer2_container .Footer1_content {
+    padding-inline:20px ;
+  }
+
+  .Footer1_content .mid_side{
+    margin-inline:0;
+    /* margin-block: 30px; */
+    flex-direction: column;
+  }
+
+  
+
+  .Footer1_content .mid_side .mid_side_title,
+  .Footer1_content .mid_side a{
+    font-size: 15px;
+  }
+
+  .right_side{
+    
+  }
+  
+  .right_side .mapImage{
+    width: 180px;
+    
+  }
+
+  .Footer2_container .Footer1_content {
+    margin-inline: 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+}
+
+
+.rump_logo_footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rump_logo_footer img{
+  width: 130px;
+  cursor: pointer;
+}
+
+
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}
+
+/* End Header_2 Styles */
+
+  
+

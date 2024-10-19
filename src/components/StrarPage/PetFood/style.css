@@ -1,0 +1,463 @@
+.pet_food_container {
+  margin-top: 20px;
+  padding-inline: 50px;
+}
+
+.pet_food_title {
+  color: #f86408;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.pet_food_title .arrow {
+  position: relative;
+}
+
+.pet_food_title .arrow .pf_looped_arrow {
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+
+.pf_looped_arrow {
+  left: calc(50%);
+  z-index: 100;
+}
+
+.pf_looped_arrow svg {
+  transform: rotate(94deg);
+  width: 100px;
+  color: #64cee6ec;
+}
+
+.b-border {
+  color: #222 !important;
+  position: relative;
+}
+
+.b-border span {
+  bottom: -20px;
+  display: block;
+  height: auto;
+  position: absolute;
+  width: 100%;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px; /* Adjust the height as needed */
+  content: url("../../../assets//images/small_border.png");
+  background-size: cover; /* Ensure the image covers the whole area */
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+
+.swiper-3d,
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  background-image: none !important;
+}
+
+.swiper-slide {
+  width: 200px;
+  background-color: transparent;
+  border-radius: 10px;
+  background-size: cover;
+  /* border: 1px solid white; */
+  text-align: center;
+  /* background-image: url(./assets/slideBG.png); */
+  color: #ffffff;
+}
+
+.pet_food_swiper {
+  width: 80%;
+  margin-inline: auto;
+  position: relative;
+}
+
+.food_card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  /* transform: rotate(20deg); */
+  transform-origin: center;
+  transition: 0.3s ease;
+}
+
+.food_card.lesThanActive {
+  transform: rotate(-20deg) scale(0.8);
+  opacity: 0.5;
+}
+.food_card.moreThanActive {
+  opacity: 0.5;
+  transform: rotate(20deg) scale(0.8);
+}
+
+.food_card .food_slide {
+  /* width:300px; */
+  padding-inline: 40px;
+}
+
+.food_card .prodName {
+  font-size: 20px;
+  color: #222 !important;
+  font-weight: bolder;
+}
+
+.food_slide {
+  width: 100%;
+}
+
+.food_slide img {
+  width: 100%;
+}
+
+.Pet_food_bttom {
+  margin-top: 20px;
+}
+
+.Pet_food_bttom .feats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  padding-inline: 100px;
+}
+
+.Pet_food_bttom .feats .feat_item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Pet_food_bttom .feats .feat_item .featIcon {
+  width: 80px;
+  height: 80px;
+  background-image: url("../../../assets//images/trueCircule.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  font-size: 30px;
+  color: #292929;
+  align-items: center;
+  justify-content: center;
+}
+
+.Pet_food_bttom .feats .feat_item .feat_title {
+  color: #292929;
+  font-size: 15px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.Pet_food_bttom .feats .feat_item .feat_info {
+  color: #2e2e2e;
+  font-size: 14px;
+  width: 130px;
+  text-align: center;
+}
+
+.pet_food .custom-prev {
+  position: absolute;
+  background-color: #222;
+  top: 50%;
+  left: calc(50% - 184px);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+}
+
+.pet_food .custom-next {
+  right: calc(50% - 187px);
+  left: auto;
+  width: 40px;
+  height: 40px;
+}
+
+
+  
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .pet_food_title {
+    font-size: calc(10px + 1.1vw);
+  }
+  .Pet_food_bttom .feats {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    padding-inline: 30px;
+  }
+  .pet_food_swiper {
+    width: 100%;
+  }
+  .pet_food_container {
+    margin-top: 10px;
+    padding-inline: 5px;
+  }
+  .Pet_food_bttom .feats .feat_item  {
+      gap:10px
+  }
+  .Pet_food_bttom .feats .feat_item .featIcon {
+    width: 85px;
+    height: 85px;
+    font-size: 25px;
+  }
+
+  .Pet_food_bttom .feats .feat_item .feat_title {
+    font-size: 15px;
+    width: 100%;
+    
+  }
+
+  .Pet_food_bttom .feats .feat_item .feat_info {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .food_card .prodName {
+    font-size: 15px;
+    color: #222 !important;
+    font-weight: bolder;
+  }
+
+  .food_card .food_slide {
+    /* width:300px; */
+    padding-inline: 10px;
+  }
+
+  .pet_food .custom-prev {
+    left: calc(50% - 118px);
+  }
+
+  .pet_food .custom-next {
+    right: calc(50% - 118px);
+  }
+
+  .pf_looped_arrow svg {
+    transform: rotate(94deg);
+    width: 60px;
+    color: #64cee6ec;
+  }
+
+  .pet_food_title .arrow .pf_looped_arrow {
+    top: 10px;
+  }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px)  {
+  .pet_food_title {
+    font-size: calc(10px + 1.1vw);
+  }
+  .Pet_food_bttom .feats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding-inline: 30px;
+  }
+  .pet_food_swiper {
+    width: 100%;
+  }
+  .pet_food_container {
+    margin-top: 10px;
+    padding-inline: 5px;
+  }
+  .Pet_food_bttom .feats .feat_item  {
+      gap:10px
+  }
+  .Pet_food_bttom .feats .feat_item .featIcon {
+    width: 85px;
+    height: 85px;
+    font-size: 25px;
+  }
+
+  .Pet_food_bttom .feats .feat_item .feat_title {
+    font-size: 15px;
+    width: 100%;
+    
+  }
+
+  .Pet_food_bttom .feats .feat_item .feat_info {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .food_card .prodName {
+    font-size: 15px;
+    color: #222 !important;
+    font-weight: bolder;
+  }
+
+  .food_card .food_slide {
+    /* width:300px; */
+    padding-inline: 10px;
+  }
+
+  .pet_food .custom-prev {
+    left: calc(50% - 118px);
+  }
+
+  .pet_food .custom-next {
+    right: calc(50% - 118px);
+  }
+
+  .pf_looped_arrow svg {
+    transform: rotate(94deg);
+    width: 60px;
+    color: #64cee6ec;
+  }
+
+  .pet_food_title .arrow .pf_looped_arrow {
+    top: 10px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .pet_food_title {
+    font-size: calc(10px + 1.1vw);
+  }
+  .Pet_food_bttom .feats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding-inline: 20px;
+  }
+  .pet_food_swiper {
+    width: 100%;
+  }
+  .pet_food_container {
+    margin-top: 10px;
+    padding-inline: 5px;
+  }
+  .Pet_food_bttom .feats .feat_item  {
+      gap:5px
+  }
+  .Pet_food_bttom .feats .feat_item .featIcon {
+    width: 85px;
+    height: 85px;
+    font-size: 25px;
+  }
+
+  .Pet_food_bttom .feats .feat_item .feat_title {
+    font-size: 15px;
+    width: 100%;
+    
+  }
+
+  .Pet_food_bttom .feats .feat_item .feat_info {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .food_card .prodName {
+    font-size: 15px;
+    color: #222 !important;
+    font-weight: bolder;
+  }
+
+  .food_card .food_slide {
+    /* width:300px; */
+    padding-inline: 10px;
+  }
+
+  .pet_food .custom-prev {
+    left: calc(50% - 118px);
+  }
+
+  .pet_food .custom-next {
+    right: calc(50% - 118px);
+  }
+
+  .pf_looped_arrow svg {
+    transform: rotate(94deg);
+    width: 60px;
+    color: #64cee6ec;
+  }
+
+  .pet_food_title .arrow .pf_looped_arrow {
+    top: 10px;
+  }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px){
+  .pet_food_title {
+    font-size: calc(10px + 1.1vw);
+  }
+  .Pet_food_bttom .feats {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    padding-inline: 20px;
+  }
+  .pet_food_swiper {
+    width: 100%;
+  }
+  .pet_food_container {
+    margin-top: 10px;
+    padding-inline: 5px;
+  }
+  .Pet_food_bttom .feats .feat_item  {
+      gap:5px
+  }
+  .Pet_food_bttom .feats .feat_item .featIcon {
+    width: 85px;
+    height: 85px;
+    font-size: 25px;
+  }
+
+  .Pet_food_bttom .feats .feat_item .feat_title {
+    font-size: 15px;
+    width: 100%;
+    
+  }
+
+  .Pet_food_bttom .feats .feat_item .feat_info {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .food_card .prodName {
+    font-size: 15px;
+    color: #222 !important;
+    font-weight: bolder;
+  }
+
+  .food_card .food_slide {
+    /* width:300px; */
+    padding-inline: 10px;
+  }
+
+  .pet_food .custom-prev {
+    left: calc(50% - 118px);
+  }
+
+  .pet_food .custom-next {
+    right: calc(50% - 118px);
+  }
+
+  .pf_looped_arrow svg {
+    transform: rotate(94deg);
+    width: 60px;
+    color: #64cee6ec;
+  }
+
+  .pet_food_title .arrow .pf_looped_arrow {
+    top: 10px;
+  }
+}
+/* Extra large devices (large desktops, less than 1400px) */
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}

@@ -1,0 +1,263 @@
+@media (max-width:1100px) {
+    .adopt-explore-text {
+        right: 70px;
+    }
+}
+
+@media (max-width:1085px) {
+    .adopt-explore-text {
+        right: 50px;
+    }
+}
+
+@media (max-width:1065px) {
+    .adopt-explore-text {
+        right: 30px;
+    }
+}
+
+@media (max-width:1048px) {
+    .adopt-explore-card img{
+      left:20px
+    }
+
+    .adopt-explore-text {
+        right: 40px;
+    }
+}
+
+@media (max-width:963px) {
+    .adopt-explore-text {
+        width:55%;
+        top:6px
+    }
+
+    .adopt-explore-text button {
+        margin: 10px 0px;
+    }
+}
+
+@media (max-width:870px) {
+    .adopt-explore-text {
+        right: 10px;
+    }
+}
+
+@media (max-width:810px) {
+    /* .adopt-explore-card {
+        height: 100%;
+        flex-direction: column !important;
+    }
+
+    .adopt-explore-text {
+        bottom: 0px;
+        left: 50%;
+        right: 50%;
+    } */
+
+    .adopt-explore-card img {
+        width: 280px;
+    }
+
+    .adopt-explore-text h3 {
+        font-size: 38px !important;
+    }
+
+    .adopt-explore-text {
+        top: 20px;
+    }
+}
+
+@media (max-width:741px) {
+    .adopt-explore-text button{
+        margin-top:0px !important;
+    }
+
+}
+
+@media (max-width:720px) {
+    .adopt-explore-text {
+        right: 0px;
+    }
+}
+
+@media (max-width:700px) {
+    .adopt-explore-text h3 {
+        font-size: 30px !important;
+    }
+
+    .adopt-explore-text button {
+        margin-top : 40px !important;
+    }
+
+    .adopt-explore-text {
+        top:30px
+    }
+}
+
+@media (max-width:693px) {
+    .adopt-explore-card img {
+        width: 240px;
+    }
+
+    .adopt-explore-card {
+        height: 230px;
+    }
+
+}
+
+@media (max-width:675px) {
+    
+
+    .adopt-explore-text {
+        right: 10px;
+        /* width: 45px; */
+    }
+    .adopt-explore-text h3 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width:666px) {
+    .adopt-explore-text h3 {
+        font-size: 24px !important;
+    }
+
+    .adopt-explore-text button {
+        margin-top: 10px !important;
+    }
+}
+
+@media (max-width:625px) {
+    .adopt-explore-text {
+        right: 0px;
+    }
+}
+
+@media (max-width:615px) {
+    .adopt-explore-card {
+        height: 200px;
+    }
+    .adopt-explore-card img {
+        width: 200px;
+    }
+
+    .adopt-explore-text {
+        top: 20px;
+    }
+}
+
+@media (max-width:545px) {
+    .adopt-explore-card {
+        height: 220px;
+    }
+}
+
+@media (max-width:525px) {
+    .adopt-explore-card {
+        height: 180px;
+    }
+
+    .adopt-explore-card img {
+        width: 170px;
+    }
+     
+    .adopt-explore-text h3{
+        font-size: 22px !important;
+    }
+
+    .adopt-explore-text p{ 
+        font-size: 16px !important;
+    }
+
+    .adopt-explore-text button {
+        font-size: 13px !important;
+    }
+
+}
+
+@media (max-width:501px) {
+    .adopt-explore-card img {
+        width: 150px;
+    }
+    
+    .adopt-explore-card {
+        height: 160px;
+    }
+
+    .adopt-explore-text {
+       width: 60%;
+       top: 6px ;
+    }
+
+
+    .adopt-explore-text h3 {
+        font-size: 18px !important;
+    }
+
+    .adopt-explore-text p {
+        font-size: 13px !important;
+    }
+
+    .adopt-explore-text button {
+        padding: 4px;
+    }
+}
+
+
+@media (max-width:470px) {
+    .adopt-explore-text {
+        right: -15px;
+    }
+}
+
+@media (max-width:440px) {
+    .adopt-explore-card img {
+        width: 155px;
+        left: 5px;
+    }
+
+    .adopt-explore-text h3 {
+        font-size: 16px !important;
+    }
+
+    .adopt-explore-text p {
+        width: 80%;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width:400px) {
+    .adopt-explore-card {
+        height: 150px;
+    }
+
+    .adopt-explore-card img {
+        width: 140px;
+    }
+
+    .adopt-explore-text p {
+        width: 85%;
+        font-size: 12px !important;
+        margin-top: 0px !important;
+    }
+
+    .adopt-explore-text button {
+        margin: 0px;
+        font-size: 12px !important;
+        padding: 4px !important;
+    }
+}
+
+@media (max-width:390px) {
+    .adopt-explore-card {
+        padding: 0px 40px;
+    }
+    .adopt-explore-text h3 {
+        font-size: 14px !important;
+    }
+
+    .adopt-explore-text {
+        margin-top: 5px;
+    }
+}

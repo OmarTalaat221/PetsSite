@@ -1,0 +1,26 @@
+/* Additional CSS for fine-tuning responsiveness */
+@media (max-width: 768px) {
+    .adopt-home-text {
+      padding: 10px;
+    }
+  
+    .adopt-home-text h1 {
+      font-size: 1.75rem; /* Adjust heading size for smaller screens */
+    }
+  
+    .adopt-home-text button {
+      width: 100%;
+    }
+  
+    .adopt-home-text .flex {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .adopt-home-text {
+      padding: 20px;
+    }
+  }
+  

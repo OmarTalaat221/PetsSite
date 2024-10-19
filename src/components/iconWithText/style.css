@@ -1,0 +1,49 @@
+.iconWithText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+
+  /* font-size: 18px; */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 21.6px */
+  cursor: pointer;
+}
+.iconWithText .text_content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-left: 10px;
+}
+
+.iconWithText .text_content .iconWithTextHeader{
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+.iconWithText ._icon{
+  padding:10px;
+  background-color: rgba(236, 119, 17, 0.527);
+  border-radius: 6px;
+  font-size: 20px;
+  color: #fffefe;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.contact .iconWithTextTitle {
+  color: #000;
+  font-family: Tajawal;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 33.6px */
+}
+
+.contact {
+  margin-bottom: 43px;
+}

@@ -1,0 +1,109 @@
+.pregunts-container {
+      padding: 20px;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  .pregunts-box h2  {
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+  }
+  
+  .title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ee701e;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+  
+  .not-found-text {
+      text-align: center;
+      color: #ee701e;
+      margin-top: 40px;
+      font-weight: bold;
+  }
+  
+  .pregunts-contacts-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+  }
+  
+  .contact {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .pregunts-contact-icon {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 10px;
+  }
+  
+
+  .contact_text ,
+  .contact_text a {
+      font-size: 1.2rem;
+      color: #555 !important;
+      text-decoration: none;
+      font-weight: bold;
+  }
+ 
+
+   @media (max-width:743px) {
+    .pregunts-box  {
+        width:800px
+    }
+   }
+
+   @media (max-width:630px) {
+     .pregunts-contacts-container {
+        flex-direction: column;
+     }
+
+    
+
+     .pregunts-container {
+        padding: 80px 30px;
+    }
+   }
+
+   @media (max-width:560px) {
+      .pregunts-container h2 {
+        font-size: 28px !important;
+      }
+   }
+ 
+ 
+   @media (max-width:450px) {
+     .contacts_icons{
+        flex-direction :column
+     }
+   }
+
+@media (max-width:411px) {
+    .pregunts-container {
+     padding: 80px 30px;
+    }
+
+    .pregunts-container h3 {
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width:370px) {
+    .pregunts-container {
+        padding: 80px 20px;
+    }
+}

@@ -1,0 +1,322 @@
+.login_page {
+  /* min-height: 100vh; */
+  margin-bottom: 15px;
+  display: flex;
+  /* align-items: center; */
+  /* background-color: #afdff9; */
+  justify-content: center;
+}
+
+.login_content {
+  width: 900px;
+  max-width: 97%;
+  margin: auto;
+  min-height: 500px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-top: 30px;
+  border-radius: 4px;
+  display: flex;
+  min-height: 350px;
+  border-radius: 30px;
+  flex-wrap: wrap;
+}
+
+.login_content .login_left {
+  width: 400px;
+  max-width: 100%;
+  background-image: url("../../assets/images/adorable-beagle-puppy-solo-portrait.jpg");
+  background-position-x: -50px;
+  background-size: cover;
+  display: flex;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0px 0px 20px;
+}
+
+
+.login_content .login_left img {
+  width: 200px;
+}
+
+.login_left img {
+  width: 200px;
+}
+
+.login_content .login_right {
+  padding: 20px;
+  width: calc(100% - 400px);
+  max-width: 100%;
+
+}
+
+.login_content .login_right h4 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ee701e;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.login_content .login_right div {
+  margin-bottom: 20px;
+  margin-top:20px;
+  position: relative;
+}
+.login_content .login_right div svg{
+  color: #222;
+}
+
+.login_content .login_right div input {
+  display: block;
+  width: 100%;
+  border-bottom: 3px solid #ccc;
+  padding: 10px 32px;
+  outline: none;
+}
+
+.login_content .login_right svg {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.login_content .login_right div button {
+  
+}
+
+.privacy_vaildation{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+.login_content .login_right div button:hover {
+  border-color: #ee701e;
+  background-color: transparent;
+  color: #ee701e;
+}
+
+.login_content .reg_para {
+  font-size: 22px;
+}
+
+.login_content .reg_para span {
+  color: #ee701e;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.login_content .forget_pass {
+  cursor: pointer;
+  font-size: 22px;
+  color: #ee701e;
+  font-weight: 600;
+}
+
+@media (max-width:992px) {
+  .login_content .login_right {
+    width: calc(100% - 350px);
+  }
+
+  .login_content .login_left {
+    width: 350px;
+    border-radius: 20px;
+    background-position-x: -110px;
+  }
+}
+
+@media (max-width:767px) {
+  .login_content {
+    margin:0px 20px;
+    padding:0px 10px;
+  }
+
+  .login_content .login_right {
+    width: 100%;
+
+  }
+
+  .login_content .login_left {
+    display: none;
+  }
+}
+
+@media (max-width:565px) {
+  .login_content .login_right {
+    padding: 0px 10px;
+
+  }
+
+
+  .login_content .login_left {
+    background-position-y: -10px;
+
+  }
+
+
+  .login_content .reg_para {
+    font-size: 15px;
+  }
+
+  .login_content .reg_para span {
+    color: #ee701e;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 19px;
+  }
+
+  .login_content .forget_pass {
+    cursor: pointer;
+    font-size: 18px;
+    color: #ee701e;
+    font-weight: 600;
+  }
+
+
+}
+
+@media (max-width:480px) {
+  .login_content .login_left {
+    background-position-x: -40px;
+
+    /* object-fit: contain; */
+  }
+}
+
+@media (max-width:330px) {
+  .login_content .login_left {
+    background-position-x: -90px;
+
+    /* object-fit: contain; */
+  }
+}
+
+/* .login_content {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 20px;
+}
+
+.login_content .login_form {
+  background-color: #e89f10;
+  padding: 10px;
+  width: 500px;
+  border-radius: 10px;
+  padding: 30px;
+  min-height: 600px;
+}
+
+.login_form form h5 {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.login_form form p {
+  color: white;
+  font-size: 22px;
+}
+
+.login_content .login_form div {
+  margin-bottom: 20px;
+}
+
+.login_content .login_form label {
+  display: block;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.login_content .login_form input {
+  width: 100%;
+  padding: 20px;
+  border-radius: 3px;
+  border: none;
+  background-color: #f5be46;
+  border-radius: 20px;
+  outline: none;
+}
+
+.login_content .login_form input::placeholder {
+  color: white;
+}
+
+.login_content .login_form input {
+  caret-color: white;
+}
+
+.login_content .login_form div:nth-of-type(3) {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login_content .login_form div button {
+  background-color: #f5be46;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.login_content .login_img {} */
+/*
+.login_page {
+  background-color: #afdff9;
+  min-height: 100vh;
+}
+
+.login_page .log_header {
+  background-color: #ee701e;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.login_form {
+  background-color: white;
+  width: 700px;
+  padding: 50px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.login_form h5 {
+  color: #ee701e;
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.login_form div {
+  margin-bottom: 20px;
+}
+
+.login_form div label {
+  font-weight: 600;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login_form div input {
+  background-color: #f2f0f5;
+  display: block;
+  width: 100%;
+  padding: 20px 15px;
+} */

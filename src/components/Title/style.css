@@ -1,0 +1,13 @@
+
+.sections_title  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sections_title .co_title_text {
+  text-align: center;
+  font-size: 45px;
+  border-bottom: 4px solid #ff9100;
+  font-weight: bolder;
+}

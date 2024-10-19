@@ -1,0 +1,44 @@
+.about-differential_box div{
+    transition: all 0.3s;
+}
+
+@media (max-width:1225px) {
+    .about_differential_container {
+        padding: 80px 100px;
+    }
+}
+
+@media (max-width:1064px) {
+    .about-differential_container  {
+       padding: 80px;
+    }
+}
+
+@media (max-width:900px) {
+    .about-differential_box {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width:650px) {
+    .about-differential_container {
+        padding:80px 50px ;
+    }
+
+    .about-differential_box {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:640px) {
+    .about-differential_container {
+        padding: 80px 60px;
+    }
+}
+
+
+@media (max-width:420px) {
+    .about_differential_container {
+        padding: 80px 30px;
+    }
+}

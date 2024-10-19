@@ -1,0 +1,23 @@
+
+
+.bonesIcons{
+  position: relative;
+}
+
+.bonesIcons .boneIcon{
+  position: absolute;
+  font-size: 35px;
+}
+
+.boneIcon.bone-1{
+  transform: rotate(42deg);
+}
+
+.boneIcon.bone-2{
+  transform: translate(5px, 27px) rotate(-30deg);
+  
+}
+
+.boneIcon.bone-3{
+  transform: translate(-15px, 25px) rotate(0deg);
+}

@@ -1,0 +1,43 @@
+
+.petsCards{
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  justify-items: center;
+  align-items: center;
+  row-gap: 40px;
+  margin-top: 30px;
+}
+
+.user_pets_container{
+  padding: 20px;
+}
+
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+ 
+.petsCards{
+  grid-template-columns: repeat(1, 1fr);
+}
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}
+
+

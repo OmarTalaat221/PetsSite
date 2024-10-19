@@ -1,0 +1,163 @@
+.report_container {
+  background-color: #ff9100;
+  position: relative;
+}
+
+.report_container .report_title {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.report_container .report_title .title {
+  text-align: center;
+  color: #fbf5e7;
+  font-size: 45px;
+  border-bottom: 4px solid #fbf5e7;
+  /* margin-top: -100px; */
+  font-weight: bolder;
+}
+
+.report_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 100px;
+  margin-top: 20px;
+}
+
+.report_content .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 30px;
+}
+
+.report_content .left .street_dog_image {
+  width: 300px;
+  border-radius: 30px;
+  overflow: hidden;
+  /* box-shadow: 0 0 10px rgb(72, 51, 35); */
+  border: 5px dotted #fff;
+  padding: 5px;
+}
+
+.report_content .left .street_dog_image img {
+  width: 100%;
+  border-radius: 30px;
+}
+.report_content .right {
+  border-left: 3px solid #fff;
+  padding: 30px;
+}
+
+.report_content .right p {
+  color: #fff;
+  font-size: 25px;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .report_container .report_title {
+    gap: 40px;
+  }
+
+  .report_container .report_title .title {
+    text-align: center;
+    color: #fbf5e7;
+    font-size: calc(10px + 2.3vw);
+    border-bottom: 2px solid #fbf5e7;
+    /* margin-top: -100px; */
+  }
+
+  .report_content {
+    padding-inline: 30px;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+
+  .report_content .left {
+    padding-inline: 10px;
+  }
+
+  .report_content .left .street_dog_image {
+    width: 150px;
+    width: calc(100px + 15vw);
+    border: 2px dotted #fff;
+    padding: 3px;
+  }
+
+  .report_content .right {
+    border: none;
+    padding: 10px;
+  }
+
+  .report_content .right p {
+    font-size: 15px;
+  }
+
+  .report_btn {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .report_container .report_title {
+    gap: 40px;
+  }
+
+  .report_container .report_title .title {
+    text-align: center;
+    color: #fbf5e7;
+    font-size: calc(10px + 3.3vw);
+    border-bottom: 3px solid #fbf5e7;
+    /* margin-top: -100px; */
+  }
+
+  .report_content {
+    padding-inline: 30px;
+    margin-top: 20px;
+  }
+
+  .report_content .left {
+    padding-inline: 10px;
+  }
+
+  .report_content .left .street_dog_image {
+    width: 150px;
+    width: calc(100px + 15vw);
+    border: 3px dotted #fff;
+    padding: 5px;
+  }
+
+  .report_content .right {
+    border: none;
+    padding: 10px;
+  }
+
+  .report_content .right p {
+    font-size: 20px;
+  }
+
+  .report_btn {
+    font-size: 20px;
+    padding: 5px 15px;
+  }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+
+}

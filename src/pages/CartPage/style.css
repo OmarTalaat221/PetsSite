@@ -1,0 +1,181 @@
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.product-table th, .product-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.product-table th:first-child{
+  text-align: start;
+
+}
+
+.product-table th {
+  font-weight: bold;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.product-name {
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.quantity-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(164, 164, 164);
+  width: fit-content  ;
+  margin-inline: auto;
+  padding-inline:"10px";
+  border-radius: 20px;
+}
+
+.quantity-control button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  line-height: 0;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity-control span {
+  margin: 0 10px;
+}
+
+.remove-button {
+  background-color: transparent;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+
+.order-summary {
+  width: 300px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.order-summary h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #010101 !important;
+  margin: 10px 0;
+} 
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 20px 0;
+}
+
+.order-summary p {
+  font-size: 12px;
+  font-weight: bolder;
+  color: #252525;
+  margin-bottom: 20px;
+}
+
+.pay-now, .continue-shopping {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.continue-shopping {
+  background-color: #ff6600;
+}
+
+.pay-now:hover, .continue-shopping:hover {
+  opacity: 0.9;
+}
+
+  
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* Your styles here */
+  .product-table {
+    width: 600px;
+    border-collapse: collapse;
+    overflow: auto;
+    margin: 20px 0;
+  }
+  .order-summary {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Your styles here */
+  
+  .product-table {
+    width: 767.98px;
+    border-collapse: collapse;
+    overflow: auto;
+    margin: 20px 0;
+  }
+
+  .order-summary {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Your styles here */
+  .order-summary {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Your styles here */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* Your styles here */
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  /* Your styles here */
+}

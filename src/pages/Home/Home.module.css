@@ -1,0 +1,13 @@
+.about{
+    background-color: var(--main-color);
+}
+
+.features {
+    /* background-color: var(--yellow-color);   */
+    /* margin-top: -40px;  */
+    position: relative;
+}
+
+.features svg {
+    fill: var(--yellow-color);
+}

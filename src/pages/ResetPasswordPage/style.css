@@ -1,0 +1,81 @@
+.forget-password-contaainer {
+  box-shadow:rgba(0, 0, 0, 0.16) 0px 1px 4px
+}
+
+.forget-password-contaainer input {
+ display: block;
+width: 100%;
+border-bottom: 3px solid #ccc;
+padding: 3px 30px 4px;
+outline: none;
+}
+
+.forget-password-contaainer .input-group {
+ margin-bottom: 10px;
+margin-top: 10px;
+position: relative;
+}
+
+.forget-password-contaainer .input-group svg {
+ position: absolute;
+left: 0px;
+top: 50%;
+transform: translateY(-50%);
+font-size: 22px;
+font-weight: 600;
+}
+
+@media (max-width:584px) {
+.forget-password-contaainer {
+ margin: 50px;
+}
+}
+
+@media (max-width:555px) {
+.forget-password {
+ padding: 20px ;
+}
+
+.forget-password h2 {
+ font-size:30px ;
+}
+}
+
+@media (max-width:534px) {
+.forget-password p {
+ font-size: 17px;
+ text-align: center;
+}
+}
+
+@media (max-width:493px) {
+.forget-password h2 {
+ font-size: 26px;
+}
+}
+
+@media (max-width:443px) {
+.forget-password h2  {
+ font-size: 23px;
+}
+
+.forget-password p {
+ font-size: 16px;
+}
+
+
+.forget-password .send-btn {
+ padding: 8px 24px !important;
+}
+}
+
+@media (max-width:405px) {
+.forget-password h2 {
+ font-size: 20px;
+}
+
+.forget-password p {
+ font-size: 16px;
+}
+}
+

@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+   --main-color : #EE701E;
+   --secondary-color:#FF9500;
+   --x-color : #ff910050;
+   --gray-color: #6B7280
+}
+
+body {
+    font-family: "Comic Neue", cursive;
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
+}
+
+html, body { 
+    scroll-behavior: smooth
+  }
+
+.ch-market{ 
+    font-family:"Chelsea Market" !important;
+}

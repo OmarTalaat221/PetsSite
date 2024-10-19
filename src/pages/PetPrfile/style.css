@@ -1,0 +1,77 @@
+
+
+
+.pet_profile_container{
+  padding: 20px;
+
+}
+
+
+.pet_profile_content{
+  background-color: #e7e7e7;
+  border-radius: 20px;
+  padding: 20px;
+  
+}
+
+.pet_prfile_right_icons{
+  height: calc(100% - 100px);
+}
+
+
+.pet_profile_content .pet_profile_left .pp_image{
+  width:100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #c5c5c5;
+
+}
+
+.pet_profile_content .pet_profile_left .pp_image img{
+
+  width: 100%;
+  
+}
+
+.pp_image{
+  position: relative;
+
+}
+
+.editIcon{
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #7a7a7a53;
+  color: #fff;
+  top: 25px;
+  right: 25px;
+  backdrop-filter: blur(10px); /* Blurry effect */
+  cursor: pointer;
+}
+
+.save_image_btn{
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+
+.pp_owner_name{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pp_owner_name h3{
+  font-size: 25px;
+}
+
+.pp_owner_name h4{
+  font-size: 20px;
+  color: rgb(44, 44, 44);
+}
+
+
+.pet_qr_code{
+  cursor: pointer;
+}

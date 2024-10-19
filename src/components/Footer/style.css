@@ -1,0 +1,240 @@
+.fotter-container {
+  background-color: #292929;
+}
+
+.footer_content {
+  padding: 0 50px;
+  margin-top: -20px;
+  padding-bottom: 20px;
+  background-color: #292929;
+}
+
+.footer_columns {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.fotter-container .column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+  text-wrap: wrap;
+  word-break: break-word;
+}
+
+.fotter-container .column .column_title {
+  font-size: 30px;
+  color: #e6e6e6;
+  font-weight: bolder;
+}
+
+.fotter-container .column_1 .logoImage {
+  width: 150px;
+}
+
+.fotter-container .column_1 .logoImage img {
+  width: 100%;
+}
+
+.fotter-container .column.column_3 .socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 25px;
+  transition: 0.2s ease;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.fotter-container .column.column_3 .socials .social_icon {
+  transition: 0.3s ease;
+  color: aliceblue;
+  font-size: 25px;
+}
+
+.fotter-container .column.column_3 .socials .social_icon:hover {
+  font-size: 28px;
+}
+
+.footerIcon {
+  font-size: 25px;
+}
+
+.whatsapp,
+.phone,
+.gmail,
+.calender {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.calender .calenderIcon {
+  font-size: 20px;
+  color: #e6e6e6;
+}
+
+.whatsapp .footerIcon.whatsappIcon {
+  color: rgb(28, 194, 28);
+}
+.phone .footerIcon.phoneIcon {
+  color: rgb(48, 110, 227);
+}
+.gmail .footerIcon.gmailIcon {
+  color: rgb(250, 125, 90);
+}
+
+.footer_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_item_text {
+  color: #e6e6e6;
+  font-size: 13px;
+}
+
+.footer_item_text a {
+  text-decoration: none;
+  color: #e6e6e6;
+}
+
+.footer_item_title {
+  color: #e6e6e6;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer_links .foot_link {
+  font-weight: bolder;
+  font-size: 16px;
+  color: #e6e6e6;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.footer_links .foot_link:hover {
+  color: #aeaeae;
+  font-size: 18px;
+}
+
+.footer_socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  color: #e6e6e6;
+}
+
+.footer_socials .left {
+  font-size: 15px;
+  color: #bfbfbf;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.footer_socials .right {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* 
+.footer_socials .right .social_icon{
+  font-size: 25px;
+  cursor: pointer;
+  color: #fff;
+} */
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 700px) {
+  .footer_content {
+    padding: 0 30px;
+    margin-top:-10px;
+    padding-bottom: 20px;
+  }
+
+  .footer_columns {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fotter-container .column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .fotter-container .column .column_title {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  .footer_item_title {
+    color: #e6e6e6;
+    font-size: 15px;
+    font-weight: bolder;
+  }
+
+  .fotter-container .column_1 .logoImage {
+    width: 150px;
+    padding-block: 30px;
+  }
+
+  .footer_item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer_socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .whatsapp {
+    margin-top: 20px;
+  }
+  .phone {
+    margin-bottom: 20px;
+  }
+
+
+  .footer_links .foot_link {
+    font-size: 12px;
+
+  }
+  
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}

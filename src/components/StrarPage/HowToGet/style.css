@@ -1,0 +1,261 @@
+.how_to_get_container{
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.how_to_get_content{
+
+}
+
+.htg_title{
+  position: relative;
+  text-align: center;
+}
+
+.htg_title .title_text{
+  font-size: 25px;
+  z-index: 1;
+
+  font-weight: bolder;
+}
+
+.htg_title .cat_ears{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  
+  z-index: -1;
+  transform: translate(-50% , -50%);
+  color: #EBF7FD;
+  font-size: 100px;
+}
+
+.getting_steps{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  flex-wrap: wrap;
+}
+
+.getting_steps .step{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.getting_steps .step .step_image_container{
+  position: relative;
+  
+}
+
+.getting_steps .step .step_image_container .curcle_svg{
+  position: absolute;
+  width: 120px;
+  z-index: -1;
+  color: #82c7ec;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+.getting_steps .step .step_image_container .image{
+  width: 140px;
+}
+
+.getting_steps .step .step_image_container .image img{
+  width: 100%;
+}
+
+.getting_steps .step .step_number{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EE701E;
+  border-radius: 60% / 50%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bolder;
+  margin-block: 20px;
+} 
+
+.getting_steps .step .step_name{
+  font-size: 13px;
+  
+  font-weight: bolder;
+  
+}
+
+.getting_steps .step  .step_info{
+  font-size: 12px;
+  color: #2a2a2a;
+  width: 150px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.step_with_arrows{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: #82c7ec;
+  width: 110px;
+}
+
+.animated_arrow{
+  color: #82c7ec;
+  width: 80px;
+  transform: rotateX(0deg) rotateY(180deg) scale(.7);
+  width: 100px;
+  margin-inline: 30px;
+  
+}
+
+.animated_arrow.arrow_2{
+  transform: rotateX(180deg) rotateY(180deg) scale(0.7);
+  
+
+}
+
+
+.mobile_swiper{
+  width:200px;
+  text-align: center;
+  margin-inline: auto;
+  display: none;
+}
+.mobile_swiper .getting_steps{
+  margin-top: 20px;
+}
+
+.mobile_swiper .setp_details{
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile_swiper .setp_details .setp_title{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.mobile_swiper .setp_details .setp_info{
+  font-size: 15px;
+  font-weight: 500;
+  color:#3a3a3a
+}
+
+/* .custom-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+} */
+
+/* .custom-prev , .custom-next  {
+  position: absolute;
+  background-color: #222;
+  top: 50%;
+  right: 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+} */
+
+.custom-prev , .custom-next{
+  position: absolute;
+  background-color: #222;
+  top: 50%;
+  left: 0;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+
+.custom-next{
+  right: 0;
+  left: auto;
+}
+
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+  background: #ee711e8b;
+  bottom: -30px !important;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #EE701E;
+}
+
+.mobile_swiper .swiper-pagination {
+  bottom: auto; /* Remove default bottom positioning */
+  bottom: 0px; /* Position at the top, adjust as needed */
+  left: 0; /* Adjust left/right positioning if needed */
+  right: 0;
+  width: 100%; /* Ensure the pagination spans the width of the container */
+  text-align: center; /* Center align the pagination bullets */
+  z-index: 4px !important;
+}
+
+.mobile_swiper .step .image{
+  margin-block: 30px;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+  .how_to_get_content > .getting_steps{
+    display: none;
+  }
+
+  .mobile_swiper{
+    display: block;
+  }
+
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}

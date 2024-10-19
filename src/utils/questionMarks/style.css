@@ -1,0 +1,69 @@
+
+
+.q_marks-container{
+  position: relative;
+  
+}
+  .q_marks-container .q_mark,   .q_marks-container .stars_mark{
+    
+    position: absolute;
+  }
+
+  .q_marks-container .q_mark:first-child{
+    font-size: 50px; 
+    transform: rotate(30deg);
+  }
+
+  .q_marks-container .q_mark:nth-child(2){
+    font-size: 10px; 
+    transform: rotate(30deg);
+
+  }
+  
+
+  .q_marks-container .q_mark:nth-child(3){
+    font-size: 10px; 
+    transform: rotate(30deg) translate(-10px , 10px);
+  }
+
+  .q_marks-container .q_mark:nth-child(4){
+    font-size: 10px; 
+    transform: rotate(30deg) translate(10px , 15px);
+
+  }
+  
+  .q_marks-container .q_mark:nth-child(5){
+    font-size: 30px; 
+    transform: rotate(30deg) translate(30px , -35px);
+  }
+
+  .q_marks-container .q_mark:nth-child(6){
+    font-size: 20px; 
+    transform: rotate(30deg) translate(50px , -22px);
+
+  }
+
+  .q_marks-container .q_mark:nth-child(7){
+    font-size: 10px; 
+    transform: rotate(30deg) translate(50px , -6px);
+
+  }
+  .q_marks-container .stars_mark{
+      color:#fff;
+  }
+
+  .q_marks-container .stars_mark.stars_1{
+    font-size: 10px; 
+     transform: translate(50px , 30px);
+  }
+
+  .q_marks-container .stars_mark.stars_2{
+    font-size: 10px; 
+     transform: translate(70px , -5px);
+  }
+
+  .q_marks-container .stars_mark.stars_3{
+    font-size: 15px; 
+     transform: translate(30px , -15px);
+  }
+  

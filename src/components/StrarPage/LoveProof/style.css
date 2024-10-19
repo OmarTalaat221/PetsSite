@@ -1,0 +1,150 @@
+.love_proof_contaienr {
+  background-color: #AEDEF8;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 30px;
+}
+
+.love_proof_content {
+  width: 750px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.love_proof_content > div {
+  width: 50%;
+}
+
+.lp_left_side {
+  padding-right: 20px;
+  position: relative;
+}
+
+
+.lp_left_side h4 {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.lp_left_right {
+  /* border: 1px solid red; */
+}
+
+.lp_left_right .prodImage {
+  /* border: 1px solid rgb(4, 28, 82); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lp_left_right .prodImage {
+  position: relative;
+  width: 100%;
+}
+
+
+.lp_left_right .prodImage .image {
+  width: 400px;
+  z-index: 1;
+}
+.lp_left_right .prodImage image img {
+  width: 100%;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.lp_left_right .prodImage .circle_layout {
+  position: absolute;
+  top: 50%;
+  fill: #fff;
+  color: #fff;
+  width: 350px;
+  left: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+.lp_looped_arrow {
+  color: #fff;
+  position: absolute;
+  width: 120px;
+  bottom: -50px;
+  right: -10px;
+}
+
+.lp_looped_arrow svg {
+  width: 100%;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .love_proof_contaienr {
+    height: auto;
+    padding: 20px;
+    margin-block: 15px;
+
+  }
+
+  .love_proof_content {
+    width: 750px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    flex-direction: column;
+  }
+
+  
+.love_proof_content > div {
+  width: 100%;
+}
+
+
+.lp_left_side {
+  padding: none;
+}
+
+.lp_left_right .prodImage .image {
+  width: 200px;
+  z-index: 1;
+}
+
+
+
+.lp_left_side h4 {
+  font-size: 14px;
+}
+
+.lp_left_right .prodImage .circle_layout {
+  width: 240px;
+}
+.lp_looped_arrow {
+    width: 80px;
+    bottom: -31px;
+    right: -8px;
+    transform: rotateX(1deg) rotateY(180deg) rotate(71deg);
+}
+.lp_left_right {
+  margin-top: 15px;
+}
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}

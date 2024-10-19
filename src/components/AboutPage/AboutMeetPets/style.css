@@ -1,0 +1,107 @@
+@media (max-width:1240px) {
+    .about_meet_container {
+        padding: 80px 100px;
+    }
+
+    .about-meet-paw-1 {
+        left: 500px;
+        z-index: 9999 !important;
+    }
+}
+
+@media (max-width:1126px) {
+    .about-meet-paw-1 {
+        /* left: 420px; */
+    }
+
+    .about_meet_container p {
+        margin: 14px 0px !important;
+    }
+}
+
+@media (max-width:950px) {
+    .about-meet-paw-1 {
+        left: 450px;
+    }
+}
+
+@media (max-width:950px) {
+    .about-meet-paw-1 {
+        left: 430px;
+        top: 140px;
+    }
+}
+
+@media (max-width:800px) {
+   .about-meet-box {
+       grid-template-columns: 1fr;
+   }
+    
+   .about-meet-box img {
+    width: 100%;
+   }
+
+   .about-meet-paw-1 {
+      top:100px;
+      left: 700px;
+   }
+  
+   .about-meet-paw-2 {
+    top:500px;
+    /* left: 700px; */
+ }
+
+ .about-meet-paw-5 {
+    top: 700px;
+ }
+
+    .about_meet_container {
+        padding: 80px;
+    }
+
+    .last-meet-img {
+        grid-row: 1;
+    }
+
+    .last-meet-text {
+        grid-row: 2;
+    }
+    .about-meet-paw-3 {
+      top: 1000px;
+      left: 200px;
+    }
+
+    .about-meet-paw-5 {
+        top: 1000px;
+        
+    }
+}
+
+
+
+@media (max-width:775px) {
+    .about-meet-box {
+        gap: 40px;
+    }
+
+    .about-meet-paw-1 {
+        left: 500px;
+    }
+
+    .about-meet-paw-2 {
+    left: 500px;
+    }
+}
+
+@media (max-width:700px) {
+    .about-meet-box {
+       grid-template-columns: 1fr;
+       margin: 10px auto;
+    }
+
+    .about-meet-box img {
+        margin: 0px auto !important;
+    }
+
+}
+

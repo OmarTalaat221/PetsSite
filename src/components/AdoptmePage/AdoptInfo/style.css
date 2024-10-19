@@ -1,0 +1,19 @@
+/* Additional CSS for fine-tuning responsiveness */
+@media (max-width: 640px) {
+    .adopt-info-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .adopt-info-item svg {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .adopt-info-item {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+  

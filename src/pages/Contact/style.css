@@ -1,0 +1,146 @@
+.contact_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-block: 50px;
+  height:80vh
+}
+
+.contact_content {
+  display: flex;
+  align-items: end;
+}
+
+.contact_image {
+  width: 200px;
+}
+.contact_image img {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.prev_contact_text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 0;
+}
+
+.prev_contact_text .top_text {
+  color: #ff6c0c;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.curved_text {
+  display: block;
+  margin: 0 auto;
+}
+
+.prev_contact_text text {
+  font-family: Arial, sans-serif;
+  font-size: 90px;
+  font-weight: bolder;
+  letter-spacing: -5px;
+  fill: #ff6c0c;
+  text-anchor: middle; /* Centers the text */
+}
+
+.contacts_icons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.contacts_icons .ms_contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacts_icons .ms_contact .contact_icon {
+  padding: 15px;
+  color: #fff;
+  background-color: black;
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.contacts_icons .ms_contact .contact_text {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: bolder;
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .contact_image {
+    display: none;
+    width: 50px;
+  } 
+
+  .prev_contact_text .top_text {
+    color: #ff6c0c;
+    font-weight: bolder;
+    font-size: 25px;
+  }
+
+  
+.prev_contact_text text {
+  font-family: Arial, sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+  letter-spacing: -5px;
+  fill: #ff6c0c;
+  text-anchor: middle; /* Centers the text */
+}
+
+.contacts_icons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contacts_icons .ms_contact {
+  gap: 7px;
+}
+.contacts_icons .ms_contact .contact_icon {
+  font-size: 20px;
+
+  padding: 10px;
+
+}
+
+.contacts_icons .ms_contact .contact_text {
+  font-size: 17px !important
+}
+
+
+.contacts_icons {
+  align-items: start;
+}
+
+.curved_text {
+  margin-top: -50px;
+}
+
+
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}

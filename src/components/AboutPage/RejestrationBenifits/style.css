@@ -1,0 +1,157 @@
+
+.rb_container{
+  background-color: #EE701E;
+  padding-bottom: 200px ;
+}
+
+
+.rb_content{
+  
+}
+
+.rb_content .rb_title {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.rb_content .rb_title h4{
+  font-size: 35px;
+  font-weight: bolder;
+
+}
+
+
+.benifits_container{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 35px;
+  width: 800px;
+  margin-inline: auto;
+  margin-top: 40px;
+  
+}
+
+.benifits_container .benifit{
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.benifits_container .benifit .image_icon{
+  position: relative;
+}
+
+
+.benifits_container .benifit .image_icon .image{
+  width: 110px;
+}
+
+.benifits_container .benifit .image_icon .icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  font-size: 40px;
+  color: #2a2a2a;
+}
+
+.benifits_container .benifit .image_icon .image img{
+  width: 100%;
+}
+
+.benifits_container .benifit .benifit_content{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+}
+
+.benifits_container .benifit .benifit_content .benifit_title{
+  font-size: 15px;
+  font-weight: bolder;
+  color: #2a2a2a;
+}
+
+.benifits_container .benifit .benifit_content .benifit_info{
+  color: #fff;
+  font-size: 13px;
+}
+
+
+
+
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  
+.rb_container{
+  padding-bottom: 200px;
+}
+
+
+.rb_content .rb_title {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.rb_content .rb_title h4{
+  font-size: 20px;
+  font-size: calc(15px + 1.5vw);
+}
+
+.benifits_container{
+  
+  display: flex;
+  gap: 20px;
+  width: calc(100% - 2 * 10vw);
+  width: auto;
+  margin-top: 20px;
+  padding-inline: 20px; 
+  
+}
+
+.benifits_container .benifit{
+  gap: 15px;
+}
+
+
+.benifits_container .benifit .image_icon .image{
+  width: 60px;
+}
+
+.benifits_container .benifit .image_icon .icon{
+  font-size: 25px;
+}
+.benifits_container .benifit .benifit_content{
+  gap: 6px;
+  width: auto;
+}
+
+.benifits_container .benifit .benifit_content .benifit_title{
+  font-size: 12px;
+}
+
+.benifits_container .benifit .benifit_content .benifit_info{
+  font-size: 11px;
+}
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+ 
+
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}
+

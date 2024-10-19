@@ -1,0 +1,21 @@
+/* Additional CSS for fine-tuning responsiveness */
+@media (max-width: 768px) {
+    .adopt-home-img {
+      padding: 10px;
+    }
+  
+    .adopt-home-img img {
+      width: 100%; /* Make images full width on small screens */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .adopt-home-img {
+      padding: 20px;
+    }
+  
+    .adopt-home-img img {
+      width: 18rem; /* Fixed width for images on larger screens */
+    }
+  }
+  

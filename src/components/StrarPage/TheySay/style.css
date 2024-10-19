@@ -1,0 +1,173 @@
+
+
+.TheySayContainer{
+  background-color: #EE701E;
+  padding-block:30px ;
+  position: relative;
+}
+
+
+.TheySayContainer .th_title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  width: 200px;
+  margin-inline: auto;
+}
+
+.they_say_content{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.they_say_content > div{
+  width: 50%; 
+}
+
+.ts_right{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+  
+.ts_right .saying{
+  color: #fff;
+  font-size: 20px;
+  font-weight: bolder;
+  width: 300px;
+
+}
+  .ts_right .teller_name{
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: bolder;
+  }
+
+
+  .theySay .custom_prev{
+    left: calc(100% - 100% / 3) !important;
+  }
+  
+  
+  
+  @media (max-width: 1023.98px) {
+    .theySay .custom_prev{
+      left: calc(100% - 100% / 2) !important;
+    }
+    
+  }
+  
+
+  .th_image_slide{
+    border-radius: 0px;
+    overflow: none;
+  }
+  
+  .th_image_slide img{
+    /* border-radius: 10px; */
+    overflow: none;
+    width: 100%; 
+  }
+
+  .dog_catch_earth_image{
+    position: absolute;
+    bottom: 20px;
+    right: 200px;
+    width: 80px;
+  }
+    .dog_catch_earth_image img{
+     width: 100%;
+    }
+
+  .ts_left{
+    border-radius: 0 10px 10px 0;
+  }
+
+  
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+  .TheySayContainer{
+    background-color: #EE701E;
+    padding-block:20px ;
+  }
+
+  .TheySayContainer .th_title{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 200px;
+    margin-inline: auto;
+  }
+
+  .they_say_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+
+    gap: 20px;
+}
+
+
+
+.they_say_content > div{
+  width: 100%; 
+}
+
+
+.ts_right{
+  gap: 15px;
+}
+
+.ts_right .saying{
+  font-size: 15px;
+  /* text-align: center; */
+  
+}
+
+.th_image_slide{
+  width: 200px;
+}
+.ts_left{
+  width: calc(100% - 10vw)!important;
+}
+
+
+
+.ts_right .teller_name{
+  font-size: 15px;
+  /* text-align: center; */
+  color: rgb(38, 38, 38);
+
+}
+
+.dog_catch_earth_image{
+  position: static;
+  text-align: center;
+  margin-inline: auto;
+  width: 100px;
+}
+
+
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
+
+/* Extra extra large devices (larger desktops, less than 1600px) */
+@media (max-width: 1599.98px) {
+}
