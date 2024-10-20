@@ -38,11 +38,11 @@ const StartFindPet = ({ loading, homeData }) => {
               <img src={fp_dog} alt="" />
             </div>
           </div>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center" onClick={()=>window.location.href = "/findpet"}>
             <div className="fb_abs_btn_start mx-auto">Ingresa el código</div>
           </div>
         </div>
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center"  onClick={()=>window.location.href = "/findpet"}>
           <div className="fb_abs_btn_start_mobile mx-auto">
             Ingresa el código
           </div>

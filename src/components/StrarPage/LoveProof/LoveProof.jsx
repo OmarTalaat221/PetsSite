@@ -18,13 +18,16 @@ const LoveProof = ({ loading, homeData }) => {
       <div className="love_proof_content">
         <div className="" data-aos="fade-down">
           {<div dangerouslySetInnerHTML={{ __html: homeData?.dni_txt }} />}
-          <div className="lp_looped_arrow">{looped_arrow}</div>
+          
+         
+          {/* <div className="lp_looped_arrow">{looped_arrow}</div> */}
         </div>
+
         <div className="lp_left_right" data-aos="fade-up">
           <div className="prodImage">
             {/* <div className="circle_layout">{bigCircle}</div> */}
             <div className="image">
-              <img src={homeData?.dni_image} alt="prod" />
+              <img src={"https://worldpetsperu.ahmed.its.ae/static/media/petCard.be8914c281ad7fac9884.png"} alt="prod" />
             </div>
           </div>
         </div>

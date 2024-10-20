@@ -42,7 +42,7 @@ const TheySay = ({ loading, saysData }) => {
   }, []);
 
   return (
-    <div className="TheySayContainer">
+    <div className="TheySayContainer" style={{marginBottom:"20px"}}>
       <div className="text-center th_title" data-aos="fade-up">
         <img src={theySay} alt="They Say" />
       </div>
@@ -52,11 +52,12 @@ const TheySay = ({ loading, saysData }) => {
           <Swiper
             ref={swiperRef}
             onSlideChange={handleSlideChange}
-            initialSlide={2}
+            initialSlide={1}
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={2}
             spaceBetween={35}
+            loop={true}
             navigation={{
               nextEl: ".custom-next",
               prevEl: ".custom-prev",
@@ -89,9 +90,9 @@ const TheySay = ({ loading, saysData }) => {
             className="mySwiper"
           >
             {saysData?.map((item, index) => (
-              <SwiperSlide className="swiper-slide" key={item.id}>
-                <div className="th_image_slide">
-                  <img src={item?.image} alt={item?.name} />
+              <SwiperSlide className="swiper-slide" key={item.id} style={{height:"340px"}}>
+                <div className="th_image_slide" style={{height:"100%"}}>
+                  <img src={item?.image} alt={item?.name} style={{height:"100%"}}/>
                 </div>
               </SwiperSlide>
             ))}
@@ -104,6 +105,7 @@ const TheySay = ({ loading, saysData }) => {
         </div>
 
         <div className="ts_right" data-aos="fade-left">
+        {}
           <div className="saying">
             {saysData.find((item, index) => activeIndex === index)?.text_es}
           </div>

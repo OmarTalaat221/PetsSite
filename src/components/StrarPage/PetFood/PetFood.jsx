@@ -136,11 +136,11 @@ const PetFood = ({ featuresData, productsData }) => {
                     }`}
                   >
                     <div className="food_slide">
-                      <img src={food2} alt="" />
+                      <img src={item?.image} alt="" />
                     </div>
-                    {+index == +activeIndex && (
+                    {/* {+index == +activeIndex && (
                       <div className={"prodName"}>{item.name_es}</div>
-                    )}
+                    )} */}
                   </div>
                 </SwiperSlide>
               );
@@ -174,9 +174,9 @@ const PetFood = ({ featuresData, productsData }) => {
           {featuresData.map((e) => {
             return (
               <div className="feat_item">
-                <div className="featIcon">{airePlane}</div>
-                <div className="feat_title">{e.title_es}</div>
-                <div className="feat_info">{e.description_es}</div>
+                <div className=""><img src={e?.icon} alt="" /></div>
+                <div className="feat_title">{e?.title_es}</div>
+                <div className="feat_info">{e?.description_es}</div>
               </div>
             );
           })}

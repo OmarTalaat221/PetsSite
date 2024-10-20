@@ -15,7 +15,7 @@ export default function AboutBanner({ loading, aboutPage }) {
       style={{ backgroundImage: `url(${aboutPage?.banner_image})` }}
     >
       <div className="about_banner_text">
-        {<div dangerouslySetInnerHTML={{ __html: aboutPage?.banner_title }} />}
+        {/* {<div dangerouslySetInnerHTML={{ __html: aboutPage?.banner_title }} />} */}
 
         {<div dangerouslySetInnerHTML={{ __html: aboutPage?.banner_text }} />}
       </div>

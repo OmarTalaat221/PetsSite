@@ -8,6 +8,7 @@ import {AccordionItem} from "react-bootstrap";
 import ProductDetailAccordian from "../../components/ProductDetailAccordian/ProductDetailAccordian";
 import {useLocation, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+import food2 from "../../assets/images/2.png";
 import {
   addOneToCart,
   addToCart,
@@ -136,7 +137,7 @@ export default function ProductDetails() {
     <div className='product_details_page'>
       <div className='product_details_container'>
         <div className='product_details_img'>
-          <img src={data?.image} />
+          <img src={food2} />
         </div>
 
         <div className='product_details_text_container'>

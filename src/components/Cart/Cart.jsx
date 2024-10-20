@@ -65,6 +65,7 @@ const Cart = ({openCart, setOpenCart}) => {
               cartData && cartData.length >=1 ? 
         <div className='cart_prods'>
           {cartData?.map((prod, index) => {
+            console.log(prod)
             return (
               <div className='cart_prod border-bottom border-light'>
                 <div className='prod_image'>

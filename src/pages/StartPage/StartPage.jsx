@@ -57,7 +57,7 @@ const StartPage = () => {
       <LoveProof loading={loading} homeData={homeData} />
       <HowToGet loading={loading} servicesData={servicesData} />
       <TheySay loading={loading} saysData={saysData} />
-      <EndSection loading={loading} brandsData={brandsData} />
+      {/* <EndSection loading={loading} brandsData={brandsData} /> */}
     </div>
   );
 };

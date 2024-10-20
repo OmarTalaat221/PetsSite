@@ -14,7 +14,7 @@ const OwnerShip = ({ loading, homeData }) => {
       duration: 600,
     });
   }, []);
-  
+
   return (
     <div className="ownership_container">
       <div className="ownership_content">
@@ -26,6 +26,13 @@ const OwnerShip = ({ loading, homeData }) => {
         <div className="os_right_side" data-aos="fade-left">
           {
             <div
+            style={{marginTop:"20px"}}
+              dangerouslySetInnerHTML={{ __html: homeData?.propiedad_title }}
+            />
+          }
+          {
+            <div
+            style={{marginTop:"20px"}}
               dangerouslySetInnerHTML={{ __html: homeData?.propiedad_txt }}
             />
           }

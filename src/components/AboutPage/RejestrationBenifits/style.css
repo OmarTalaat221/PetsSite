@@ -37,7 +37,7 @@
 .benifits_container .benifit{
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 20px;
 }
 
 .benifits_container .benifit .image_icon{
@@ -65,8 +65,8 @@
 .benifits_container .benifit .benifit_content{
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 400px;
+  gap: 3px;
+  width: 270px;
 }
 
 .benifits_container .benifit .benifit_content .benifit_title{

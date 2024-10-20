@@ -102,9 +102,9 @@ const HowToGet = ({ servicesData }) => {
 
                   <div className="step" data-aos="fade-right">
                     <div className="step_image_container">
-                      <div className="curcle_svg">{bigCircle}</div>
+                      {/* <div className="curcle_svg">{bigCircle}</div> */}
                       <div className="image">
-                        <img src={truk} alt="" />
+                        <img src={e?.icon} alt="" />
                       </div>
                     </div>
 
@@ -125,9 +125,9 @@ const HowToGet = ({ servicesData }) => {
                 <>
                   <div className="step" data-aos="fade-right">
                     <div className="step_image_container">
-                      <div className="curcle_svg">{bigCircle}</div>
+                      {/* <div className="curcle_svg">{bigCircle}</div> */}
                       <div className="image">
-                        <img src={truk} alt="" />
+                      <img src={e?.icon} alt="" />
                       </div>
                     </div>
 
@@ -155,7 +155,7 @@ const HowToGet = ({ servicesData }) => {
               // pagination={true}
               pagination={pagination}
               // spaceBetween={40}
-              // loop={true}
+              loop={true}
               navigation={{
                 nextEl: ".custom-next",
                 prevEl: ".custom-prev",

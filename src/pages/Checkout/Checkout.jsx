@@ -31,7 +31,7 @@ const Checkout = () => {
 
   const [loading, setLoading] = useState(false);
   const [delivary, setdelivary] = useState([]);
-  const [ChooseDelivary, setChooseDelivary] = useState([]);
+  const [ChooseDelivary, setChooseDelivary] = useState(false);
 
   const [CheckoutData, setCheckoutData] = useState({
     Client_telephone: user?.phone,
@@ -124,9 +124,9 @@ const Checkout = () => {
 
   return (
     <div className="checkout_page">
-      <Typo my={"10px"} position={"center"} variant={"h6"} fw={"bold"}>
+      {/* <Typo my={"10px"} position={"center"} variant={"h6"} fw={"bold"}>
         Registro Único de Mascotas del Perú
-      </Typo>
+      </Typo> */}
 
       <div className="checkout_container">
         <div className="container">
@@ -135,7 +135,7 @@ const Checkout = () => {
               <FromGroup rowCount={1}>
                 <FromGroup.Input
                   label={
-                    <Typo fw={"bolder"} variant={"h3"}>
+                    <Typo color={"white "} fw={"bolder"} variant={"h3"}>
                       Contacto
                     </Typo>
                   }
@@ -154,92 +154,105 @@ const Checkout = () => {
                 <input
                   type="checkbox"
                   style={{ scale: "1.5", border: "none", outline: "none" }}
+                  onChange={(e) => setChooseDelivary(e.target.checked)}
                 />
                 <div>
-                  <Typo color={"dark1"} variant={"sm"}>
-                    ¿Agregar envío?
+                  <Typo variant={"sm"}>
+                    <span style={{ color: "white" }}> ¿Agregar envío?</span>
                   </Typo>
-                  <Typo color={"dark1"} variant={"sm"}>
-                    Nuestro local de recojo gratuito se encuentra en la Av. Perú
-                    cuadra 42, SMP (Lima)
+                  <Typo color={"white "} variant={"sm"}>
+                    <span style={{ color: "white" }}>
+                      {" "}
+                      Nuestro local de recojo gratuito se encuentra en la Av.
+                      Perú cuadra 42, SMP (Lima){" "}
+                    </span>
                   </Typo>
                 </div>
               </div>
-              <div>
-                <Select
-                  placeholder="Número de teléfono para contacto"
-                  options={delivaryOptions}
-                  onChange={(e) => {
-                    console.log(e);
-                    setCheckoutData({
-                      ...CheckoutData,
-                      Delivery: e.value,
-                    });
-                  }}
-                />
-              </div>
-              <FromGroup rowCount={2}>
-                <FromGroup.Input
-                  placeholder="Nombre completo"
-                  defaultValue={user?.name}
-                  onChange={(e) => {
-                    setCheckoutData({
-                      ...CheckoutData,
-                      client_name: e.target.value,
-                    });
-                  }}
-                />
-                <FromGroup.Input
-                  placeholder="DNI o C.E."
-                  type="number"
-                  onChange={(e) => {
-                    setCheckoutData({
-                      ...CheckoutData,
-                      client_Id: e.target.value,
-                    });
-                  }}
-                />
-              </FromGroup>
-              <FromGroup rowCount={1}>
-                <FromGroup.Input
-                  placeholder={
-                    "Dirección (Delivery disponible en Lima Metropolitana)"
-                  }
-                  onChange={(e) => {
-                    setCheckoutData({
-                      ...CheckoutData,
-                      client_location: e.target.value,
-                    });
-                  }}
-                />
-                <FromGroup.Input
-                  placeholder={
-                    "Referencia (Delivery disponible en Lima Metropolitana)"
-                  }
-                  onChange={(e) => {
-                    setCheckoutData({
-                      ...CheckoutData,
-                      client_location_refrance: e.target.value,
-                    });
-                  }}
-                />
-              </FromGroup>
+              {ChooseDelivary ? (
+                <>
+                  <div>
+                    <Select
+                      placeholder="Número de teléfono para contacto"
+                      options={delivaryOptions}
+                      style={{ color: "black" }}
+                      onChange={(e) => {
+                        console.log(e);
+                        setCheckoutData({
+                          ...CheckoutData,
+                          Delivery: e.value,
+                        });
+                      }}
+                    />
+                  </div>
+                  <FromGroup rowCount={2}>
+                    <FromGroup.Input
+                      placeholder="Nombre completo"
+                      defaultValue={user?.name}
+                      onChange={(e) => {
+                        setCheckoutData({
+                          ...CheckoutData,
+                          client_name: e.target.value,
+                        });
+                      }}
+                    />
+                    <FromGroup.Input
+                      placeholder="DNI o C.E."
+                      type="number"
+                      onChange={(e) => {
+                        setCheckoutData({
+                          ...CheckoutData,
+                          client_Id: e.target.value,
+                        });
+                      }}
+                    />
+                  </FromGroup>
+                  <FromGroup rowCount={1}>
+                    <FromGroup.Input
+                      placeholder={
+                        "Dirección (Delivery disponible en Lima Metropolitana)"
+                      }
+                      onChange={(e) => {
+                        setCheckoutData({
+                          ...CheckoutData,
+                          client_location: e.target.value,
+                        });
+                      }}
+                    />
+                    <FromGroup.Input
+                      placeholder={
+                        "Referencia (Delivery disponible en Lima Metropolitana)"
+                      }
+                      onChange={(e) => {
+                        setCheckoutData({
+                          ...CheckoutData,
+                          client_location_refrance: e.target.value,
+                        });
+                      }}
+                    />
+                  </FromGroup>
+                </>
+              ) : null}
               <div className="d-flex gap-2 mt-3">
-                <Typo variant={"sm"}>*</Typo>
-                <Typo variant={"sm"}>
+                <Typo color={"white "} variant={"sm"}>
+                  *
+                </Typo>
+                <Typo color={"white "} variant={"sm"}>
                   El precio del envío puede variar de acuerdo a la distancia,
                   accesibilidad de la zona o tarifa de la empresa de transporte.
                 </Typo>
               </div>
               <div className="d-flex gap-2">
-                <Typo variant={"sm"}>*</Typo>
-                <Typo variant={"sm"}>
+                <Typo color={"white "} variant={"sm"}>
+                  *
+                </Typo>
+                <Typo color={"white "} variant={"sm"}>
                   envíos fuera de Lima Metropolitana se realizan a través de
                   Olva o Shalom. En caso de preferir o necesitar otra empresa de
                   transporte, el precio podría ser distinto.
                 </Typo>
               </div>
-              <Typo fw={"bolder"} variant={"h3"}>
+              <Typo color={"white "} fw={"bolder"} variant={"h3"}>
                 Método de pago
               </Typo>{" "}
               <CreditCard getData={CheckoutData} setGetData={setCheckoutData} />
@@ -249,20 +262,29 @@ const Checkout = () => {
                 py={"10px"}
                 br={"10px"}
                 variant={"md"}
-                color={"light"}
+                color={"white "}
                 bg={"rgb(36 49 94)"}
+                onClick={() => {
+                  handelCheckOut();
+                }}
               >
-                Pay now
+                <p style={{ margin: "auto", width:"fit-content", textAlign:"center" }}>
+                  {" "}
+                  {loading ? (
+                    <HashLoader size={25} color="white" />
+                  ) : (
+                    " Pay now"
+                  )}
+                </p>
               </Typo>
-              <Typo
+              {/* <Typo
                 cursor={"pointer"}
                 position={"center"}
                 py={"10px"}
                 br={"10px"}
                 variant={"h4"}
                 fw={"semibold"}
-                color={"dark"}
-                bg={"#fff"}
+                color={"white "}
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -273,11 +295,11 @@ const Checkout = () => {
                 }}
               >
                 {loading ? (
-                  <HashLoader size={25} color="rgb(36 49 94)" />
+                  <HashLoader size={25} color="white" />
                 ) : (
                   "pay"
                 )}
-              </Typo>
+              </Typo> */}
             </div>
             <div className="col-md-6 order-0 order-md-1  col-12 px-5">
               <div className="checkout_products">
@@ -287,14 +309,21 @@ const Checkout = () => {
                       <div className="prod_image_name">
                         <div className="prod_image">
                           <img src={image} alt="" />
-                          <div className="count_padge">{prod.count}</div>
+                          <div
+                            style={{ color: "white" }}
+                            className="count_padge"
+                          >
+                            {prod.count}
+                          </div>
                         </div>
-                        <Typo variant={"md"} fw={"bolder"}>
+                        <Typo color={"white "} variant={"md"} fw={"bolder"}>
                           {prod.prodName}
                         </Typo>
                       </div>
                       <div>
-                        <Typo variant={"md"}>${prod.price}</Typo>
+                        <Typo color={"white "} variant={"md"}>
+                          ${prod.price}
+                        </Typo>
                       </div>
                     </div>
                   );
@@ -302,14 +331,14 @@ const Checkout = () => {
               </div>
               <div className="mt-4"></div>
               <div className="d-flex align-items-center justify-content-between">
-                <Typo fw={"bolder"} variant={"md"}>
+                <Typo fw={"bolder"} variant={"md"} color={"white "}>
                   Subtotal (
                   {cartData?.reduce((acc, curr) => {
                     return +acc + +curr.count;
                   }, 0)}{" "}
                   productos)
                 </Typo>
-                <Typo fw={"bolder"}>
+                <Typo fw={"bolder"} color={"white "}>
                   S/ $
                   {cartData.reduce((acc, curr) => {
                     return +acc + +curr.count * +curr.price;
@@ -317,12 +346,20 @@ const Checkout = () => {
                 </Typo>
               </div>
               <div className="d-flex align-items-center justify-content-between">
-                <Typo fw={"bolder"} variant={"md"} s>
+                <Typo color={"white "} fw={"bolder"} variant={"md"} s>
                   Delivery o envío
                 </Typo>
-                <Typo fw={"bolder"}>S/ 10</Typo>
+                <Typo fw={"bolder"} color={"white "}>
+                  S/ 10
+                </Typo>
               </div>
-              <Typo position={"end"} mt={"10px"} fw={"bolder"} variant={"h2"}>
+              <Typo
+                color={"white "}
+                position={"end"}
+                mt={"10px"}
+                fw={"bolder"}
+                variant={"h2"}
+              >
                 S/{" "}
                 {(
                   cartData.reduce((acc, curr) => {

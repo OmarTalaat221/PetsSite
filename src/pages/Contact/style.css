@@ -149,3 +149,8 @@
 button.stepper_button, .stepper_input {
   border: .1px solid !important;
 }
+
+
+.cart_page {
+  height: 80vh;
+}
