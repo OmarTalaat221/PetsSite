@@ -45,7 +45,7 @@ const OwnerShip = ({ loading, homeData }) => {
           >
             {ovalIcon2}
 
-            <div className="oval_btn_text">Nuestra misión</div>
+            <div className="oval_btn_text" onClick={()=>window.location.href = "/about"}>Nuestra misión</div>
           </div>
         </div>
       </div>

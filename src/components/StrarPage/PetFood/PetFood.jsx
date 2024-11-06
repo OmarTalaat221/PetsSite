@@ -45,8 +45,8 @@ const PetFood = ({ featuresData, productsData }) => {
 
   const handleSlideChange = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      setActiveIndex(swiperRef.current.swiper.activeIndex);
-      console.log(swiperRef.current.swiper.activeIndex);
+      setActiveIndex(swiperRef.current.swiper.realIndex);
+      console.log(swiperRef.current.swiper.realIndex);
     }
   };
 
@@ -89,7 +89,7 @@ const PetFood = ({ featuresData, productsData }) => {
               nextEl: ".custom-next",
               prevEl: ".custom-prev",
             }}
-            initialSlide={2}
+            initialSlide={1}
             breakpoints={{
               0: {
                 slidesPerView: 2,
@@ -158,17 +158,20 @@ const PetFood = ({ featuresData, productsData }) => {
       </div>
 
       <div className="Pet_food_bttom">
-        <div
+        {/* <div
           className="oval_button"
           style={{
             position: "relative",
             fill: "rgb(248, 100, 8)",
             cursor: "pointer",
           }}
+          onClick={() =>
+                    navigate(`/productDetails/${productsData[activeIndex]?.id}`, { state: { data: productsData[activeIndex] } })
+                  }
         >
           {orangeOval}
           <div className="oval_btn_text"> Ver productos</div>
-        </div>
+        </div> */}
 
         <div className="feats " data-aos="fade-up">
           {featuresData.map((e) => {

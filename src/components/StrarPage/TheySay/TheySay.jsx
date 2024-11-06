@@ -31,7 +31,7 @@ const TheySay = ({ loading, saysData }) => {
 
   const handleSlideChange = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      setActiveIndex(swiperRef.current.swiper.activeIndex);
+      setActiveIndex(swiperRef.current.swiper.realIndex);
     }
   };
 
@@ -42,20 +42,20 @@ const TheySay = ({ loading, saysData }) => {
   }, []);
 
   return (
-    <div className="TheySayContainer" style={{marginBottom:"20px"}}>
+    <div className="TheySayContainer">
       <div className="text-center th_title" data-aos="fade-up">
         <img src={theySay} alt="They Say" />
       </div>
 
       <div className="they_say_content">
         <div className="ts_left" data-aos="fade-right">
-          <Swiper
+          {saysData&&saysData?.length ? <Swiper
             ref={swiperRef}
             onSlideChange={handleSlideChange}
-            initialSlide={1}
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={2}
+            initialSlide={activeIndex}
+            // grabCursor={true}
+            // centeredSlides={true}
+            slidesPerView={3}
             spaceBetween={35}
             loop={true}
             navigation={{
@@ -78,15 +78,15 @@ const TheySay = ({ loading, saysData }) => {
             }}
             autoplay={{
               delay: 2500,
-              disableOnInteraction: false,
+              disableOnInteraction: true,
             }}
-            modules={[EffectCoverflow, Pagination, Navigation]}
-            coverflowEffect={{
-              rotate: 10,
-              stretch: 50,
-              depth: 200,
-              modifier: 1,
-            }}
+            modules={[ Pagination, Navigation]}
+            // coverflowEffect={{
+            //   rotate: 10,
+            //   stretch: 50,
+            //   depth: 200,
+            //   modifier: 1,
+            // }}
             className="mySwiper"
           >
             {saysData?.map((item, index) => (
@@ -101,7 +101,7 @@ const TheySay = ({ loading, saysData }) => {
               <div className="custom-prev">{arrowLeft}</div>
               <div className="custom-next">{arrowRight}</div>
             </div>
-          </Swiper>
+          </Swiper>:null}
         </div>
 
         <div className="ts_right" data-aos="fade-left">

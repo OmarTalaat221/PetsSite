@@ -6,98 +6,109 @@ import AOS from "aos";
 import Modal from "../../components/Modal/Modal";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import { useMediaQuery } from "../../CustomHooks/useMediaQueries";
+
 import FromGroup from "../../components/FromGroup/FromGroup";
 import { FormGroup } from "react-bootstrap";
 import axios from "axios";
 import { base_url } from "../../utils";
 import toast from "react-hot-toast";
+import { useMediaQuery } from "./../../components/CustomHooks/useMediaQueries";
 
 const FindPet = () => {
-  const [addLoading , setAddLoading] = useState(false);
-  const [isOpenModal , setIsOpenModal] = useState(false);
-  const isSmallScreen = useMediaQuery('(max-width: 768px)');
-  const [allCalification , setAllCalification] = useState([]);
-  const [allDepartmento , setAllDepartment] = useState([]);
-  const [allRaza , setAllRaza] = useState([]);
-  const [allProvincia , setAllProvincia] = useState([]);
-  const [allDistrito , setAllDistrito] = useState([]);
-  const [findPetData , setFindPetData] = useState({
-    nombres:"", //الاسم الأول
-    Apellidos:"", // الاسم الاخير
-    fecha_de_nac:"", // date
-    masc_status:0,
-    calification:0,
-    animal_color:"",
-    departmento_id:"",
-    provincia_id:"",
-    raza:"",
-    distrito_id:"",
-    num_two:"",
-    num_one:"",
-  })
-  useEffect(()=>{
+  const [addLoading, setAddLoading] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const isSmallScreen = useMediaQuery("(max-width: 768px)");
+  const [allCalification, setAllCalification] = useState([]);
+  const [allDepartmento, setAllDepartment] = useState([]);
+  const [allRaza, setAllRaza] = useState([]);
+  const [allProvincia, setAllProvincia] = useState([]);
+  const [allDistrito, setAllDistrito] = useState([]);
+  const [findPetData, setFindPetData] = useState({
+    nombres: "", //الاسم الأول
+    Apellidos: "", // الاسم الاخير
+    fecha_de_nac: "", // date
+    masc_status: 0,
+    calification: 0,
+    animal_color: "",
+    departmento_id: "",
+    provincia_id: "",
+    raza: "",
+    distrito_id: "",
+    num_two: "",
+    num_one: "",
+  });
+  useEffect(() => {
     AOS.init({
-      duration:600
-    })
-  },[]);
-  
+      duration: 600,
+    });
+  }, []);
 
   function handleGetCalification() {
-   axios.get(base_url + `/user/calification/get_all`)
-   .then(res => {
-    if(res.data.status == "success") {
-      console.log(res.data.data);
-      setAllCalification(res.data.data);
-    }else {
-      console.log(res.data.message);
-    }
-   }).catch(e => console.log(e))
+    axios
+      .get(base_url + `/user/calification/get_all`)
+      .then((res) => {
+        if (res.data.status == "success" && Array.isArray(res?.data?.data)) {
+          console.log(res.data.data);
+          setAllCalification(res.data.data);
+        } else {
+          console.log(res.data.message);
+        }
+      })
+      .catch((e) => console.log(e));
   }
 
   function handleGetAllDepartment() {
-    axios.get(base_url + `/admins/get_all_departmento_for_admin`)
-    .then(res => {
-      if(res.status ==  200) {
-        console.log(res.data);
-        setAllDepartment(res.data)
-      }else {
-        console.log("حدث خطأ ما!")
-      }
-    }).catch(e => console.log(e))
+    axios
+      .get(base_url + `/admins/get_all_departmento_for_admin`)
+      .then((res) => {
+        if (res.status == 200 && Array.isArray(res.data.Departments)) {
+          console.log(res.data.Departments);
+          setAllDepartment(res.data.Departments);
+        } else {
+          console.log("حدث خطأ ما!");
+        }
+      })
+      .catch((e) => console.log(e));
   }
 
   function handleGetAllRaza() {
-    axios.get(base_url + `/admins/get_all_raza_for_admin`)
-    .then(res => {
-      if(res.status == 200) {
-        setAllRaza(res.data)
-      }else {
-        console.log("حدث خطأ ما")
-      }
-    }).catch(e => console.log(e))
+    axios
+      .get(base_url + `/admins/get_all_raza_for_admin`)
+      .then((res) => {
+        setAllRaza(res.data?.Raza);
+        if (res.status == 200 && Array.isArray(res?.data?.Raza)) {
+          setAllRaza(res.data?.Raza);
+        } else {
+          console.log("حدث خطأ ما");
+        }
+      })
+      .catch((e) => console.log(e));
   }
-   
+
   function handleGetAllProvincia() {
-    axios.get(base_url + `/user/get_all_provincia_for_user`)
-    .then(res => {
-      if(res.status == 200) {
-        setAllProvincia(res.data)
-      }else {
-        console.log("حدث خطأ ما")
-      }
-    }).catch(e => console.log(e))
+    axios
+      .get(base_url + `/user/get_all_provincia_for_user`)
+      .then((res) => {
+        if (res.status == 200 && Array.isArray(res.data?.provincia)) {
+          setAllProvincia(res.data?.provincia);
+        } else {
+          console.log("حدث خطأ ما");
+        }
+      })
+      .catch((e) => console.log(e));
   }
 
   function handleGetAllDistrito() {
-    axios.get(base_url + `/user/get_all_distrito_for_user`)
-    .then(res => {
-      if(res.status == 200) {
-        setAllDistrito(res.data)
-      }else {
-        console.log("حدث خطأ ما")
-      }
-    }).catch(e => console.log(e))
+    axios
+      .get(base_url + `/user/get_all_distrito_for_user`)
+      .then((res) => {
+        if (res.status == 200 && Array.isArray(res.data?.Districts)) {
+          setAllDistrito(res.data?.Districts);
+        } else {
+          console.log("حدث خطأ ما");
+        }
+      })
+      .catch((e) => console.log(e));
   }
 
   useEffect(() => {
@@ -106,99 +117,136 @@ const FindPet = () => {
     handleGetAllRaza();
     handleGetAllProvincia();
     handleGetAllDistrito();
-  } , [])
+  }, []);
 
   function handleSubmit() {
-     setAddLoading(true);
-     const data_send = {
+    setAddLoading(true);
+    const data_send = {
       ...findPetData,
-     }
-     axios.post(base_url + `/user/create_one`, data_send)
-     .then(res => {
-      if(res.data.status == "success") {
-         toast.success(res.data.message);
-         setIsOpenModal(false);
-         setFindPetData({
-          nombres:"", 
-          Apellidos:"", 
-          fecha_de_nac:"",
-          masc_status:0,
-          calification:0,
-          animal_color:"",
-          departmento_id:"",
-          provincia_id:"",
-          raza:"",
-          distrito_id:"",
-          num_two:"",
-          num_one:"",
-        })
-      }
-     }).catch(e => console.log(e))
-     .finally(() => setAddLoading(false))
+    };
+    axios
+      .post(base_url + `/user/create_one`, data_send)
+      .then((res) => {
+        if (res.data.status == "success") {
+          toast.success(res.data.message);
+          setIsOpenModal(false);
+          setFindPetData({
+            nombres: "",
+            Apellidos: "",
+            fecha_de_nac: "",
+            masc_status: 0,
+            calification: 0,
+            animal_color: "",
+            departmento_id: "",
+            provincia_id: "",
+            raza: "",
+            distrito_id: "",
+            num_two: "",
+            num_one: "",
+          });
+        }
+      })
+      .catch((e) => console.log(e))
+      .finally(() => setAddLoading(false));
   }
 
   return (
-     <>
-       
-       <Modal className="findpet_modal" showCloseBtn size={isSmallScreen ?"100%" : "90%"} show={isOpenModal} onClose={() => setIsOpenModal(false)}>
-         
-       <div className='gap-4 d-flex flex-column'>
-              <FromGroup rowCount={3}>
-                <FromGroup.Input
-                onChange={(e) => setFindPetData({...findPetData , nombres : e.target.value})}
-                  required={true}
-                  label={"Nombres"}
-                  placeholder='Nombre de la mascota'
-                />
-                <FromGroup.Input
-                onChange={(e) => setFindPetData({...findPetData , Apellidos : e.target.value})}
-                  required={true}
-                  label={"Apellidos"}
-                  placeholder='Apellidos del usuario'
-                />
-                <FromGroup.Input
-                onChange={(e) => setFindPetData({...findPetData , fecha_de_nac : e.target.value})}
-                  required={true}
-                  type={"date"}
-                  label={"Fecha de nacimiento"}
-                />
-                {/*  */}
-                {/* <CustomSelect
+    <>
+      <Modal
+        className="findpet_modal"
+        showCloseBtn
+        size={isSmallScreen ? "100%" : "90%"}
+        show={isOpenModal}
+        onClose={() => setIsOpenModal(false)}
+      >
+        <div className="gap-4 d-flex flex-column">
+          <FromGroup rowCount={3}>
+            <FromGroup.Input
+              onChange={(e) =>
+                setFindPetData({ ...findPetData, nombres: e.target.value })
+              }
+              required={true}
+              label={"Nombres"}
+              placeholder="Nombre de la mascota"
+            />
+            <FromGroup.Input
+              onChange={(e) =>
+                setFindPetData({ ...findPetData, Apellidos: e.target.value })
+              }
+              required={true}
+              label={"Apellidos"}
+              placeholder="Apellidos del usuario"
+            />
+            <FromGroup.Input
+              onChange={(e) =>
+                setFindPetData({ ...findPetData, fecha_de_nac: e.target.value })
+              }
+              required={true}
+              type={"date"}
+              label={"Fecha de nacimiento"}
+            />
+            {/*  */}
+            {/* <CustomSelect
                   required={true}
                   label={"Sexo de la mascota"}
                   placeholder='Apellidos del usuario'
                 /> */}
-                <CustomSelect
-                  data={[{id : 0 , title_en:"No" , title_es:"No"}, {id : 1 , title_en:"Yes" , title_es:"Sí"}]}
-                  onChange={(id) => setFindPetData({...findPetData , masc_status : id})}
-                  required={true}
-                  label={"¿La mascota está esterilizada?"}
-                  placeholder='No'
-                />
-                <CustomSelect data={allCalification} onChange={(id) => setFindPetData({...findPetData , calification : id})} label={"Calificación "} required={true} />
-                {/* <CustomSelect
+            <CustomSelect
+              data={[
+                { value: 0, label: "No" },
+                { value: 1, label: "Sí" },
+              ]}
+              onChange={(id) =>
+                setFindPetData({ ...findPetData, masc_status: id })
+              }
+              required={true}
+              label={"¿La mascota está esterilizada?"}
+              placeholder="Seleccioner..."
+            />
+            <CustomSelect
+              data={allCalification?.map((e) => {
+                return {
+                  label: e?.title_es,
+                  value: e?.id,
+                };
+              })}
+              onChange={(id) =>
+                setFindPetData({ ...findPetData, calification: id })
+              }
+              label={"Calificación "}
+              required={true}
+              placeholder="Seleccioner..."
+            />
+            {/* <CustomSelect
                   required={true}
                   label={"Especie"}
                   placeholder='Seleccione'
                 /> */}
-                <CustomSelect
-                data={allRaza}
-                onChange={(id) => setFindPetData({...findPetData , raza : id})}
-                  required={true}
-                  label={"Raza"}
-                  placeholder='Seleccione'
-                />
-                <CustomInput
-                onChange={(e) => setFindPetData({...findPetData , animal_color : e.target.value})}
-                  required={true}
-                  label={"Color de pelaje"}
-                  placeholder='Color de pelaje'
-                />
-              </FromGroup>
+            <CustomSelect
+              data={allRaza?.map((e) => {
+                return {
+                  label: e?.title_es,
+                  value: e?.id,
+                };
+              })}
+              onChange={(id) => setFindPetData({ ...findPetData, raza: id })}
+              required={true}
+              label={"Raza"}
+              placeholder="Seleccioner..."
+            />
+            <CustomInput
+              onChange={(e) =>
+                setFindPetData({ ...findPetData, animal_color: e.target.value })
+              }
+              required={true}
+              label={"Color de pelaje"}
+              placeholder="Color de pelaje"
+            />
+          </FromGroup>
 
-              {/*  */}
+          {/*  */}
 
-              {/* <FromGroup rowCount={1}>
+          {/* <FromGroup rowCount={1}>
                 <CustomInput
                   required={true}
                   label={"Dirección"}
@@ -206,47 +254,75 @@ const FindPet = () => {
                 />
               </FromGroup> */}
 
-              <FromGroup rowCount={3}>
-                <CustomSelect
-                onChange={(id) => setFindPetData({...findPetData , departmento_id : id})}
-                data={allDepartmento}
-                  required={true}
-                  label={"Departamento"}
-                  placeholder='Seleccione'
-                />
-                <CustomSelect
-                data={allProvincia}
-                onChange={(id) => setFindPetData({...findPetData , provincia_id : id})}
-                  required={true}
-                  label={"Provincia"}
-                  placeholder='Seleccione'
-                />
-                <CustomSelect
-                data={allDistrito}
-                onChange={(id) => setFindPetData({...findPetData , distrito_id : id})}
-                  required={true}
-                  label={"Distrito"}
-                  placeholder='Seleccione'
-                />
-              </FromGroup>
-                
-              <FromGroup rowCount={2}>
-              <FromGroup.Input
-              onChange={(e) => setFindPetData({...findPetData , num_one : e.target.value})}
-                  required={true}
-                  label={"número de teléfono 1"}
-                  placeholder="número de teléfono 1"
-                 />
-                <FromGroup.Input
-                onChange={(e) => setFindPetData({...findPetData , num_two : e.target.value})}
-                  required={true}
-                  label={"número de teléfono 2"}
-                  placeholder="número de teléfono 2"
-                />
-              </FromGroup>
-            </div>
-         
-         {/* <div className='gap-4 d-flex flex-column'>
+          <FromGroup rowCount={3}>
+            <CustomSelect
+              onChange={(id) =>
+                setFindPetData({ ...findPetData, departmento_id: id })
+              }
+              data={allDepartmento?.map((e) => {
+                return {
+                  label: e?.title_es,
+                  value: e?.id,
+                };
+              })}
+              required={true}
+              label={"Departamento"}
+              placeholder="Seleccioner..."
+              search={true}
+            />
+            <CustomSelect
+              data={allProvincia?.map((e) => {
+                return {
+                  label: e?.title_es,
+                  value: e?.id,
+                };
+              })}
+              onChange={(id) =>
+                setFindPetData({ ...findPetData, provincia_id: id })
+              }
+              required={true}
+              label={"Provincia"}
+              placeholder="Seleccioner..."
+              search={true}
+            />
+            <CustomSelect
+              data={allDistrito?.map((e) => {
+                return {
+                  label: e?.title_es,
+                  value: e?.id,
+                };
+              })}
+              onChange={(id) =>
+                setFindPetData({ ...findPetData, distrito_id: id })
+              }
+              required={true}
+              label={"Distrito"}
+              placeholder="Seleccioner..."
+              search={true}
+            />
+          </FromGroup>
+
+          <FromGroup rowCount={2}>
+            <FromGroup.Input
+              onChange={(e) =>
+                setFindPetData({ ...findPetData, num_one: e.target.value })
+              }
+              required={true}
+              label={"número de teléfono 1"}
+              placeholder="número de teléfono 1"
+            />
+            <FromGroup.Input
+              onChange={(e) =>
+                setFindPetData({ ...findPetData, num_two: e.target.value })
+              }
+              required={true}
+              label={"número de teléfono 2"}
+              placeholder="número de teléfono 2"
+            />
+          </FromGroup>
+        </div>
+
+        {/* <div className='gap-4 d-flex flex-column'>
          <div className="form_group_container" style={{marginTop:"20px"}}>
            <form className="custom_form">
              <div className="custom_inputs_group" style={{gridTemplateColumns:"repeat(3,1fr)"}}>
@@ -523,43 +599,57 @@ const FindPet = () => {
          </div>
          </div> */}
 
-         <div className='modal_buttons' style={{marginTop:"30px"}}>
-              <button className='confirm_button' onClick={handleSubmit}>{addLoading ? "cargando..." : "GUARDAR"}</button>
-              <button className='cancel_button' onClick={() => setIsOpenModal(false)}>Cerrar</button>
-         </div>
-       </Modal>
+        <div className="modal_buttons" style={{ marginTop: "30px" }}>
+          <button className="confirm_button" onClick={handleSubmit}>
+            {addLoading ? "cargando..." : "GUARDAR"}
+          </button>
+          <button
+            className="cancel_button"
+            onClick={() => setIsOpenModal(false)}
+          >
+            Cerrar
+          </button>
+        </div>
+      </Modal>
 
-       <div className='findpet_container'>
-      <div data-aos='zoom-out' className='fb_content'>
-        <div className='fp_left_side'>
-          <div className='image'>
-            <img src={A_letter} loading='lazy' alt='' />
-          </div>
-          <div className='fb_jubject '>
-            <div className='fb_title'>
-              {" "}
-              <span className="text_orange"> Encontré </span>una mascota
+      <div className="findpet_container">
+        <div
+          data-aos="zoom-out"
+          className="fb_content"
+          style={{ justifyContent: "flex-start" }}
+        >
+          <div className="fp_left_side">
+            <div className="image">
+              <img src={A_letter} loading="lazy" alt="" />
             </div>
-            <p className='fb_info'>
-              Ingresa el código RUMP o número de MICROCHIP para identificar y
-              ubicar a los resaposables.
-            </p>
+            <div className="fb_jubject ">
+              <div className="fb_title">
+                {" "}
+                <span className="text_orange"> Encontré </span>una mascota
+              </div>
+              <p className="fb_info">
+                Ingresa el código RUMP o número de MICROCHIP para identificar y
+                ubicar a los resaposables.
+              </p>
+            </div>
           </div>
-          
-
-        </div>
-        <div className='fp_right_side'>
-          <div className='fp_dog_image'>
-            <img src={fp_dog} alt='' />
+          <div className="fp_right_side">
+            <div
+              className="fp_dog_image"
+              style={{ marginLeft: "50px", width: "200px" }}
+            >
+              <img src={fp_dog} alt="" />
+            </div>
           </div>
-        </div>
-      <div className="mx-auto fb_abs_btn" onClick={() => setIsOpenModal(true)}>
+          <div
+            className="mx-auto fb_abs_btn"
+            onClick={() => setIsOpenModal(true)}
+          >
             Ingresa el código aquí
+          </div>
         </div>
       </div>
-
-    </div>
-     </>
+    </>
   );
 };
 

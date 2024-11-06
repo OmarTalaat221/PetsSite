@@ -64,9 +64,9 @@ const Header_1 = ({bgColor}) => {
           <img src={pureLogo} alt='' />
         </div>
         <div className='header1_right_side'>
-          <div className='header_help'>HELP</div>
+          {/* <div className='header_help'>HELP</div> */}
           <div className='Login' onClick={() => handleLogin()}>
-            {orange_login_curcle}
+            <img src="https://cdn.icon-icons.com/icons2/2030/PNG/512/user_icon_124042.png" alt="" />
           </div>
           <div className='cart' onClick={()=> setOpenCart(true)}>{HeaderCart}</div>
         </div>

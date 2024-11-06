@@ -1,24 +1,19 @@
-
-
-
-import { createSlice } from '@reduxjs/toolkit';
-
-
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  cart: JSON.parse(localStorage.getItem("pits_cart")) || []
-}
+  cart: JSON.parse(localStorage.getItem("pits_cart")) || [],
+};
 
 export const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
-    reducers: {
-    addToCart: (state , action) => {
+  reducers: {
+    addToCart: (state, action) => {
       // state.value += 1;
       const cartData = JSON.parse(localStorage.getItem("pits_cart")) || [];
-      const prodData  = action.payload
+      const prodData = action.payload;
 
-      console.log(prodData)
+      console.log(prodData);
       if (cartData) {
         const prodExist = cartData.find((item) => item.id == prodData.id);
         if (prodExist) {
@@ -26,14 +21,14 @@ export const cartSlice = createSlice({
             if (item.id == prodData.id) {
               return {
                 ...item,
-                count: prodData.count ,
+                count: prodData.count,
               };
             }
             return item;
           });
-  
+
           localStorage.setItem("pits_cart", JSON.stringify(newData));
-          state.cart = newData
+          state.cart = newData;
           return;
         }
 
@@ -44,22 +39,20 @@ export const cartSlice = createSlice({
 
         cartData.push(dataset);
         localStorage.setItem("pits_cart", JSON.stringify(cartData));
-        state.cart = cartData
+        state.cart = cartData;
       } else {
         const dataset = {
           ...prodData,
           count: prodData.count,
         };
         localStorage.setItem("pits_cart", dataset);
-        state.cart = dataset
+        state.cart = dataset;
       }
-
     },
-    
-    addOneToCart: (state , action) => {
-      const cartData = JSON.parse(localStorage.getItem("pits_cart")) || [];
-      const prodData  = action.payload
 
+    addOneToCart: (state, action) => {
+      const cartData = JSON.parse(localStorage.getItem("pits_cart")) || [];
+      const prodData = action.payload;
 
       if (cartData) {
         const newData = cartData.map((item) => {
@@ -72,13 +65,12 @@ export const cartSlice = createSlice({
           return item;
         });
         localStorage.setItem("pits_cart", JSON.stringify(newData));
-        state.cart = newData
+        state.cart = newData;
       }
     },
-    minusFromCart: (state , action) => {
+    minusFromCart: (state, action) => {
       const cartData = JSON.parse(localStorage.getItem("pits_cart")) || [];
-      const prodData  = action.payload
-
+      const prodData = action.payload;
 
       if (cartData) {
         const newData = cartData.map((item) => {
@@ -91,34 +83,36 @@ export const cartSlice = createSlice({
           return item;
         });
         localStorage.setItem("pits_cart", JSON.stringify(newData));
-        state.cart = newData
+        state.cart = newData;
       }
     },
-    
-    removeFromCart : (state , action) =>{
+
+    removeFromCart: (state, action) => {
       const cartData = JSON.parse(localStorage.getItem("pits_cart")) || [];
-      const prodData  = action.payload
-  
-        const newData = cartData.filter(c_prod => c_prod.id !==prodData.id)
+      const prodData = action.payload;
 
-        localStorage.setItem("pits_cart", JSON.stringify(newData));
-        state.cart = newData
-      }
+      const newData = cartData?.filter((c_prod) => c_prod.id !== prodData.id);
 
-  ,
-
+      localStorage.setItem("pits_cart", JSON.stringify(newData));
+      state.cart = newData;
+    },
 
     // removeFromCart: (state, action) => {
     //   state.value += action.payload;
     // },
-    clearCart:(state , action) =>{
+    clearCart: (state, action) => {
       localStorage.removeItem("pits_cart");
       state.cart = [];
-    }
+    },
   },
 });
 
-
-export const { addToCart , minusFromCart  , removeFromCart ,  addOneToCart, clearCart} = cartSlice.actions;
+export const {
+  addToCart,
+  minusFromCart,
+  removeFromCart,
+  addOneToCart,
+  clearCart,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

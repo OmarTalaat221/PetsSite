@@ -60,7 +60,10 @@ const Checkout = () => {
       .join("**pets**");
 
     console.log(joinedCountsAndIds);
-
+    if (!user?.id) {
+      setLoading(false);
+      return toast.error("Inicia sesión primero");
+    }
     const dataSendToCheck = {
       user_id: user?.id,
       delivary_id: CheckoutData?.value,
@@ -82,26 +85,97 @@ const Checkout = () => {
         console.log(res);
         if (res.data.status == "success") {
           toast.success(res.data.message);
-          dispatch(clearCart());
+          axios
+            .post("https://mercado.regipets.com/pay", {
+              transaction_amount:
+                cartData.reduce((acc, curr) => {
+                  return +acc + +curr.count * +curr.price;
+                }, 0) + (CheckoutData?.Delivery || 0),
+              description: "Compra online desde la web de Regipets",
+              quantity: cartData.reduce((acc, curr) => {
+                return +acc + +curr.count;
+              }, 0),
+              order_id: res?.data?.order?.id,
+              payer_email: user?.email,
+              items: [
+                ...order.map((product) => ({
+                  image: product?.image,
+                  title: product?.name_es,
+                  quantity: product?.count,
+                  unit_price: product?.price,
+                })),
+                {
+                  title: "Delivery",
+                  quantity: 1,
+                  unit_price: CheckoutData?.Delivery || 0,
+                },
+              ],
+            })
+            .then((res) => {
+              window.open(res?.data?.init_point, "_blanck");
+            })
+            .finally(() => {
+              dispatch(clearCart());
+              setLoading(false);
+              window.location.href = "/";
+            });
+          // dispatch(clearCart());
         } else if (res.data.status == "faild") {
           toast.error(res.data.message);
         } else {
           toast.error("someThing went Wrong");
         }
       })
+
+      .catch((e) => console.log(e))
       .finally(() => {
         setLoading(false);
-      })
-      .catch((e) => console.log(e));
+      });
   };
 
   const getDelivary = () => {
     axios
-      .get(base_url + `/admins/get_all_delivery_for_admin `)
+      .get(base_url + `/user/get_all_departmento_for_user`)
       .then((res) => {
         console.log(res);
         if (res.data.status == "success") {
-          setdelivary([...res.data.Delivery]);
+          const transformedItems = res.data.Departments.map((item) => {
+            // Create an array to hold the transformed dis_items
+            let newItems = [];
+
+            if (item.provincia?.length) {
+              item.provincia.forEach((pro_item) => {
+                if (pro_item.distrito?.length) {
+                  pro_item.distrito.forEach((dis_item) => {
+                    // Attach additional data to dis_item
+                    dis_item.pro_item = pro_item;
+                    dis_item.item = item;
+
+                    // Push the transformed dis_item to the newItems array
+                    newItems.push(dis_item);
+                  });
+                }
+              });
+            }
+
+            // Return the array of newItems from each Department
+            return newItems;
+          })
+            .flat() // Flatten the array to get all dis_items in a single array
+            .filter((item) => item && item);
+
+          setdelivary(
+            transformedItems?.map((item) => ({
+              price: item?.shipping_price,
+              title: `${
+                item?.item?.title_es?.trim() +
+                " - " +
+                item?.pro_item?.title_es?.trim() +
+                " - " +
+                item?.title_es?.trim()
+              }`,
+            }))
+          );
         } else if (res.data.status == "faild") {
           toast.error(res.data.message);
         } else {
@@ -117,7 +191,7 @@ const Checkout = () => {
   }, []);
 
   let delivaryOptions = delivary?.map((item) => {
-    return { label: item.name, value: item.id };
+    return { label: item.title, value: item.title };
   });
 
   console.log(delivaryOptions);
@@ -177,10 +251,14 @@ const Checkout = () => {
                       options={delivaryOptions}
                       style={{ color: "black" }}
                       onChange={(e) => {
-                        console.log(e);
+                        console.log(delivary, e);
                         setCheckoutData({
                           ...CheckoutData,
-                          Delivery: e.value,
+                          Delivery: delivary?.filter(
+                            (item) =>
+                              item?.title?.trim()?.toLowerCase() ==
+                              e.value?.trim()?.toLowerCase()
+                          )[0]?.price,
                         });
                       }}
                     />
@@ -252,10 +330,10 @@ const Checkout = () => {
                   transporte, el precio podría ser distinto.
                 </Typo>
               </div>
-              <Typo color={"white "} fw={"bolder"} variant={"h3"}>
+              {/* <Typo color={"white "} fw={"bolder"} variant={"h3"}>
                 Método de pago
-              </Typo>{" "}
-              <CreditCard getData={CheckoutData} setGetData={setCheckoutData} />
+              </Typo>{" "} */}
+              {/* <CreditCard getData={CheckoutData} setGetData={setCheckoutData} /> */}
               <Typo
                 cursor={"pointer"}
                 position={"center"}
@@ -268,12 +346,18 @@ const Checkout = () => {
                   handelCheckOut();
                 }}
               >
-                <p style={{ margin: "auto", width:"fit-content", textAlign:"center" }}>
+                <p
+                  style={{
+                    margin: "auto",
+                    width: "fit-content",
+                    textAlign: "center",
+                  }}
+                >
                   {" "}
                   {loading ? (
                     <HashLoader size={25} color="white" />
                   ) : (
-                    " Pay now"
+                    " Paga ahora"
                   )}
                 </p>
               </Typo>
@@ -350,7 +434,7 @@ const Checkout = () => {
                   Delivery o envío
                 </Typo>
                 <Typo fw={"bolder"} color={"white "}>
-                  S/ 10
+                  S/ {CheckoutData?.Delivery || 0}
                 </Typo>
               </div>
               <Typo
@@ -364,7 +448,7 @@ const Checkout = () => {
                 {(
                   cartData.reduce((acc, curr) => {
                     return +acc + +curr.count * +curr.price;
-                  }, 0) + 10
+                  }, 0) + (CheckoutData?.Delivery || 0)
                 ).toFixed(2)}
               </Typo>
             </div>

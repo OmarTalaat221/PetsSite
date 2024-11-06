@@ -65,11 +65,11 @@
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
-  bottom: 60px;
+  bottom: 180px;
   /* width: 100%; */
   /* bottom: 20px; */
-  right: 4px;
-  top: 150px;
+  right: 64px;
+  top: 120px;
 }
 
 

@@ -16,21 +16,26 @@ const Modal = ({
   cancelButton,
   showCloseBtn,
 }) => {
-
-
+  useEffect(() => {
+    document.addEventListener("click", (e) => {
+      // console.log(e.target);
+    });
+  }, []);
 
   useEffect(() => {
     if (overlay == false) return;
     if (show) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflow = "auto";
     }
   }, [show]);
 
   return (
     <div
-      className={`modal-overlay ${show ? "show" : ""} ${overlay ? "" : "noOverlay"} ${animation ? "" : "noAnimation"} `}
+      className={`modal-overlay ${show ? "show" : ""} ${
+        overlay ? "" : "noOverlay"
+      } ${animation ? "" : "noAnimation"} `}
       onClick={(e) => {
         if (onClose) onClose();
       }}
@@ -42,9 +47,7 @@ const Modal = ({
         }}
         className={`custom_modal ${show ? "show" : ""}`}
       >
-    
-        {
-          showCloseBtn &&
+        {showCloseBtn && (
           <button
             className="modal-close-button"
             onClick={(e) => {
@@ -53,7 +56,7 @@ const Modal = ({
           >
             &times;
           </button>
-        }
+        )}
 
         {(title || headerIcon) && (
           <div className="modal-header">
@@ -64,12 +67,13 @@ const Modal = ({
 
         <>{children}</>
 
-        
         <div className="modal-buttons">
           {confirmButton && (
             <button
+              style={confirmButton.style}
               className="modal-confirm-button"
               onClick={confirmButton.onClick}
+              {...confirmButton.props}
             >
               {confirmButton.children}
             </button>
@@ -77,6 +81,7 @@ const Modal = ({
 
           {cancelButton && (
             <button
+              style={cancelButton.style}
               className="modal-cancel-button"
               onClick={cancelButton.onClick}
             >

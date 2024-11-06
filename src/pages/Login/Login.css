@@ -1,44 +1,44 @@
 .login_page_container {
-  background-color: #afdff9;
+  background-color: #27b8c3;
   width: 100%;
   padding: 30px;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-} 
+}
 
 .login_page {
- width: 500px;
- height: 500px;
- padding: 40px 35px;
- display: flex;
- flex-direction: column;
- background-color: #ffffff;
+  width: 500px;
+  height: 500px;
+  padding: 40px 35px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
 }
 
 .login_page h2 {
- color : #eb7620;
- font-size: 47px;
- font-weight: bolder;
- align-items: center;
+  color: #eb7620;
+  font-size: 47px;
+  font-weight: bolder;
+  align-items: center;
 }
 
 .login_page form {
- display: flex;
- flex-direction: column;
- gap: 20px;
- margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .login_page form label {
- font-weight: 700;
+  font-weight: 700;
 }
 
 .login_page form div {
- display: flex;
- flex-direction: column;
- gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .login_page form div input {
@@ -53,62 +53,62 @@
 }
 
 .login_page_btns {
- display: flex;
- flex-direction: row !important;
- align-items: center;
- gap: 20px !important;  
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 20px !important;
 }
 
 .login_page_btns button {
- width: fit-content;
- background-color: #ee701e;
- color: white;
- padding:16px 28px;
- border-radius: 25px;
+  width: fit-content;
+  background-color: #ee701e;
+  color: white;
+  padding: 16px 28px;
+  border-radius: 25px;
 }
 
 .login_page_btns p {
- width: fit-content !important;
- margin: auto 0px;
- font-weight: bold;
+  width: fit-content !important;
+  margin: auto 0px;
+  font-weight: bold;
 }
 
 
 .login_page_container a {
- color: #000 !important;
- font-weight: bold;
- text-decoration: underline !important;
+  color: #000 !important;
+  font-weight: bold;
+  text-decoration: underline !important;
 }
 
 .login_page_container a:last-of-type {
- margin: 30px 0px ;
+  margin: 30px 0px;
 }
 
-.login_page_container .enter{
+.login_page_container .enter {
   display: flex;
   align-items: center;
   gap: 20px;
   flex-direction: row !important;
 }
 
-.login_page_container .enter .oval_button{
+.login_page_container .enter .oval_button {
   width: 100px;
 }
 
 @media (max-width:504px) {
- .login_page_btns {
-   flex-direction: column !important;
-   justify-content: flex-start;
-   align-items: flex-start;
- }
+  .login_page_btns {
+    flex-direction: column !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width:400px) {
- .login_page h2 {
-   font-size: 40px;
- }
+  .login_page h2 {
+    font-size: 40px;
+  }
 }
 
-.c_pointer{
-    cursor: pointer;
+.c_pointer {
+  cursor: pointer;
 }

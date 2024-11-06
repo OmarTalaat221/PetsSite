@@ -36,8 +36,9 @@ const Preview = ({ loading, homeData }) => {
           <img src={image} alt="" />
         </div>
         <div className="">
-          {<div dangerouslySetInnerHTML={{ __html: homeData?.banner_txt }} />}
+          {/* {<div dangerouslySetInnerHTML={{ __html: homeData?.banner_txt }} />} */}
         </div>
+        <div dangerouslySetInnerHTML={{ __html: homeData?.banner_title }} />
 
         <div className="oval_btns">
           {localStorage.getItem("petsUser") ? (
@@ -52,18 +53,29 @@ const Preview = ({ loading, homeData }) => {
                 }}
               >
                 {orangeOval}
-                <div className="oval_btn_text">Registrar...</div>
+                <div
+                  className="oval_btn_text"
+                  onClick={() => (window.location.href = "/registration")}
+                >
+                  Registrar...
+                </div>
               </div>
-              
+
               <div
                 className="oval_button"
                 style={{
                   position: "relative",
-                  fill: "#afdff9",
+                  fill: "#27b8c3",
                 }}
+                onClick={() => (window.location.href = "/login")}
               >
                 {orangeOval}
-                <div className="oval_btn_text text-dark">Encontré...</div>
+                <div
+                  className="oval_btn_text "
+                  style={{ color: "#fff !important" }}
+                >
+                  Encontré...
+                </div>
               </div>
             </>
           )}

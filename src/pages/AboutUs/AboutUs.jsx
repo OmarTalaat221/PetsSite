@@ -17,9 +17,10 @@ export default function AboutUs() {
   const petGetAboutData = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${base_url}/user/about`);
-      if (res.status === 200 && Array.isArray(res.data.result.services)) {
-        setAboutData(res.data.result.services);
+      const res = await axios.get(`${base_url}/user/benefits/get_all_for_user`);
+      console.log(res);
+      if (res.status === 200 && Array.isArray(res.data.beniftes)) {
+        setAboutData(res.data.beniftes);
       }
     } catch (error) {
       console.error("Error fetching products:", error);

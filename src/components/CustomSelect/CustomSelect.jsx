@@ -1,58 +1,45 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./style.css";
 import { arrow_down_eva } from "../../assets/svgIcons";
 
-const CustomSelect = ({inRow, label, data , onChange, required, ...props}) => {
-  console.log(data);
-  const select_ref = useRef(null);
-
+const CustomSelect = ({
+  inRow,
+  onChange,
+  label,
+  required,
+  data,
+  search,
+  ...props
+}) => {
   const [openList, setOpenList] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
+  const [filterValue, setFilterValue] = useState(""); // State for filtering
+  const selectRef = useRef(null); // To detect clicks outside
 
-  const handleFocus = () => {
-    console.log("focus");
-    setOpenList(true);
-    document.addEventListener("click", (e) => {
-      console.log(e.target);
-      if (e.target.id == "select_input") {
-        setOpenList(true);
-      }
-    });
-  };
-  const handleClickOutside = (event) => {
-    if (select_ref.current && !select_ref.current.contains(event.target)) {
-      setOpenList(false);
-    }
-  };
-
+  // Close dropdown when clicking outside
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+    const handleClickOutside = (event) => {
+      if (selectRef.current && !selectRef?.current?.contains(event.target)) {
+        setOpenList(false);
+      }
     };
-  }, []);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [selectRef]);
 
-  // useEffect(()=>{
-    
-  //   document.addEventListener("click", (e) => {
-  //     console.log(e.target);
-  //     if (e.target.id == "item_list") {
-  //       setTimeout(() => {
-  //         setOpenList(false);
-  //       }, 200);
-  //     } else {
-  //       setOpenList(false);
-  //     }
-  //   });
+  // Filtered data based on the filter value
+  // const filteredData = data?.filter((item) =>
+  //   item?.label?.toLowerCase()?.includes(filterValue?.toLowerCase())
+  // );
 
-    
-
-  // },[])
-
-
+  const filteredData = data?.filter((item) =>
+    item?.label?.toLowerCase()?.includes(filterValue?.toLowerCase())
+  );
 
   return (
-    <div className={`custom_select ${inRow ? "inRow" : ""}`} ref={select_ref}>
+    <div className={`custom_select ${inRow ? "inRow" : ""}`} ref={selectRef}>
       {label && (
         <label>
           {label || ""}
@@ -60,43 +47,59 @@ const CustomSelect = ({inRow, label, data , onChange, required, ...props}) => {
         </label>
       )}
 
-      <div className='select_input_container'>
+      <div className="select_input_container">
         <input
-          id='select_input'
-          value={selectedValue}
-          // onFocus={handleFocus}
-          onClick={()=>setOpenList(!openList)}
+          id="select_input"
+          value={selectedValue.label || ""}
+          onClick={() => setOpenList(!openList)}
           style={{
-            cursor:'pointer'
+            cursor: "pointer",
           }}
-          
           readOnly
           {...props}
         />
-        <div className={`select_icon ${openList? "active" : ""}`}>{arrow_down_eva}</div>
+        <div className={`select_icon ${openList ? "active" : ""}`}>
+          {arrow_down_eva}
+        </div>
+
         {openList && (
-          <div className='custom_select_list'>
-            {data && data.length >= 1 && Array.isArray(data) ? (
-              data?.map((item, index) => {
-                return (
-                  <div
-                  key={item?.id}
-                    onClick={() => {
-                      setSelectedValue( item?.title_es);
-                      onChange(item?.id)
-                      setOpenList(false)
-                    }}
-                    id='item_list'
-                    className={`custom_select_item ${
-                      item.label == selectedValue ? "active" : ""
-                    }`}
-                  >
-                    {item?.title_es}
-                  </div>
-                );
-              })
+          <div className="custom_select_list">
+            {/* Filter input */}
+
+            {search && (
+              <input
+                type="text"
+                placeholder="Buscar..."
+                className="filter_input"
+                value={filterValue}
+                onChange={(e) => setFilterValue(e.target.value)}
+                autoFocus
+              />
+            )}
+
+            {/* Display filtered data */}
+            {filteredData &&
+            filteredData?.length >= 1 &&
+            Array.isArray(filteredData) ? (
+              filteredData?.map((item, index) => (
+                <div
+                  key={index}
+                  onClick={() => {
+                    onChange(item);
+                    setSelectedValue(item);
+                    setOpenList(false);
+                    setFilterValue(""); // Clear the filter after selecting
+                  }}
+                  id="item_list"
+                  className={`custom_select_item ${
+                    item.value === selectedValue.value ? "active" : ""
+                  }`}
+                >
+                  {item?.label}
+                </div>
+              ))
             ) : (
-              <div className=''>No results found</div>
+              <div className="no_results">No results found</div>
             )}
           </div>
         )}
